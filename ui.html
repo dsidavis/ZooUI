@@ -4,7 +4,8 @@
     <script type="text/javascript" src="showDocInfo.js"></script>
     <script type="text/javascript" src="toggle.js">	</script>
     <script type="text/javascript" src="sliders.js">	</script>
-    <script type="text/javascript" src="addResult.js">	</script>            
+    <script type="text/javascript" src="addResult.js">	</script>
+    <script type="text/javascript" src="showProbInfo.js">	</script>                
     <script type="text/javascript" src="data.js" charset="UTF-8"></script>
 
     <link type="text/css" href="ui.css" rel="stylesheet"/>
@@ -16,7 +17,7 @@
 <!--
    addOptions('year', ModelResults['year'], .7);
  -->
-<body onload="showDocInfo(docInfo); showAllOptions(ModelResults, .7); updateGlobalThreshold(.7, false)">
+<body onload="showDocInfo(docInfo);  showProbInfo(ModelResults); showAllOptions(ModelResults, .7); updateGlobalThreshold(70, false)">
 
 
 <a href="" id="pdf" target="_blank"></a>
@@ -26,10 +27,19 @@
 <div id="abstract"  hidden=1>
 </div>
 
+
+<div style="float: right;">
+<a href="javascript:toggle('ProbInfo')">+Probability Info.</a>
+<div id="ProbInfo" class="ProbInfo" hidden=1>
+</div>
+</div>
+
+<div style="clear: both;"></div>
+
 <hr width="50%" class="divider"/>
 
 <div class="globalThreshold">
-Threshold: <input type="range" value="90" min=0 max=100 onchange='updateGlobalThreshold(this)'/>
+Threshold: <input id="globalThreshold_slider" type="range" value="90" min=0 max=100 onchange='updateGlobalThreshold(this)'/>
 </div>
 
 

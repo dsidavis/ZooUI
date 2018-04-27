@@ -1,20 +1,33 @@
-+ Add error checking to ensure one item is selected in each variable
+# TODO Zoonotics UI
+
+1. Add error checking to ensure one item is selected in each variable
   + or shall we allow an empty value?
   
-+ Change slider value - change display of items.
+1. When change global slider, ensure all the relevant values get updated.
+    + other sliders
+	+ contents of select options
 
-+ Text items to enter new values (that we missed)
+1. Text items to enter new values (that we missed)
   + completion to ensure easy and correct values
      + See completion.html.
      + jquery
 	 + avoid putting text below button.
   
-+ Show scrollbars on variables with more options than appear.  
-  
+1. Show scrollbars on variables with more options than appear to inform viewer there are more.
+
+1. Put tooltip on the variable name to indicate probability range and number of items
+
+1. Show the ranges of the probabilities on the sliders.
+    + let them display as 0 to 1 but put ticks showing actual range limits.
+
+1. [done] Put the probability ranges and number of items in a box.
+   + Put in the data.js
+
+1. Show the value of the slider (perhaps in the variable name text above it)
 
 # CGI/Submission
 
-+ Next PDF
++ Link to next PDF
 
 + Preserve threshold settings across paper.
 
@@ -46,3 +59,7 @@
    
 + [done] Add results to table.
    + And allow delete.
+
++. [done] When set initial threshold, update all sliders.
+
+1. [done] Change slider value - change display of items.
