@@ -1,3 +1,8 @@
++ Add error checking to ensure one item is selected in each variable
+  + or shall we allow an empty value?
+  
++ Change slider value - change display of items.
+
 + Text items to enter new values (that we missed)
   + completion to ensure easy and correct values
      + See completion.html.
