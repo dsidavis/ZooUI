@@ -5,19 +5,20 @@
     <script type="text/javascript" src="toggle.js">	</script>    
     <script type="text/javascript" src="data.js"></script>
 
+    <link type="text/css" href="ui.css" rel="stylesheet"/>
     
 <body onload="addOptions('year', ModelResults['year'], .7); showDocInfo(docInfo);">
 
 
 <a href="" id="pdf" target="_blank"></a>
 <h2 id="title"></h2>
-<h2><a href="javascript:toggle('abstract')">Abstract</a></h2>
-<div id="abstract">
+<div class="year">Year: <b id="year"></b></div>
+<h2><a href="javascript:toggle('abstract')" title="Click to toggle showing abstract">Abstract</a></h2>
+<div id="abstract"  hidden=1>
 </div>
 
-<div id="year"></div>
 
-<hr width="50%"/>
+<hr width="50%" class="divider"/>
 
 <div class="globalThreshold">
 </div>
@@ -67,6 +68,8 @@
 </table>	
 <input type="button" value="Add Row"></input>    
 </div>	
+
+<hr width="50%" class="divider"/>
 
 <div class="results">
     <!--  We can just have a table  and add rows.

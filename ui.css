@@ -1,0 +1,11 @@
+hr.divider {
+    height: 4px;    
+  //  padding: 20px;
+  background-color: red;
+  border-color: red;  
+}    
+
+
+a#pdf {
+    color: red; //#FF0000;
+}
