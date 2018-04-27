@@ -3,7 +3,6 @@ var VarNames = ['country', 'year', 'virus', 'species', 'diagTest'];
 function updateGlobalThreshold(val, update)
 {
     var els = VarNames;
-    //    var val = obj.value;
     if(!update)
 	document.getElementById("globalThreshold_slider").value = val;
     
@@ -11,6 +10,7 @@ function updateGlobalThreshold(val, update)
 	if(varThresholds[els[i]] == false) {
 	    var s = document.getElementById(els[i] + "_slider");
 	    s.value = val;
+	    
 	    if(update)
 		updateThreshold(false, els[i], val);
 	}
@@ -36,6 +36,9 @@ function updateThreshold(obj, id, val)
     if(!val)
 	val = obj.value;
 
+    if(val > 1)
+	val /= 100;
+    
     console.log("updateThreshold " + id + " " + val + " from " + CurrentThresholds[id]);
     if(CurrentThresholds[id] > val) {
 	// show more items
