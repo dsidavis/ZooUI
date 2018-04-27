@@ -16,7 +16,7 @@
 <!--
    addOptions('year', ModelResults['year'], .7);
  -->
-<body onload="showDocInfo(docInfo); showAllOptions(ModelResults, .7)">
+<body onload="showDocInfo(docInfo); showAllOptions(ModelResults, .7); updateGlobalThreshold(.7, false)">
 
 
 <a href="" id="pdf" target="_blank"></a>
@@ -35,7 +35,6 @@ Threshold: <input type="range" value="90" min=0 max=100 onchange='updateGlobalTh
 
 <!--
      Show the threshold values and number of items as a tooltip
-
      Show the min max probabilities in a collapsed div that the view can toggle to display
    -->
 
@@ -59,16 +58,14 @@ Threshold: <input type="range" value="90" min=0 max=100 onchange='updateGlobalTh
     <table border=1 align="center">
 	<tr><th title="10 items between .98 and .34">Country</th> <th>Year</th> <th>Virus</th> <th>Species</th> <th>Diagnostic Test</th>
 	<tr>
-	    <td><div class="slider country"><input id="country_slider" type="range" min="" max="100" onchange="updateThreshold(true, 'country')"></div></td>
-	    <td><div class="slider year"><input id="year_slider" type="range" min="" max="100" onchange="updateThreshold(true, 'year')"></div></td>
-	    <td><div class="slider virus"><input id="virus_slider" type="range" min="" max="100" onchange="updateThreshold(true, 'virus')"></div></td>
-	    <td><div class="slider species"><input id="species_slider" type="range" min="" max="100" onchange="updateThreshold(true, 'species')"></div></td>
-	    <td><div class="slider diagTest"><input id="diagTest_slider" type="range" min="" max="100" onchange="updateThreshold(true, 'diagTest')"></div></td>
+	    <td><div class="slider country"><input id="country_slider" type="range" min="" max="100" onchange="updateThreshold(true, 'country', event.currentTarget.value/100)"></div></td>
+	    <td><div class="slider year"><input id="year_slider" type="range" min="" max="100" onchange="updateThreshold(true, 'year', event.currentTarget.value/100)"></div></td>
+	    <td><div class="slider virus"><input id="virus_slider" type="range" min="" max="100" onchange="updateThreshold(true, 'virus', event.currentTarget.value/100)"></div></td>
+	    <td><div class="slider species"><input id="species_slider" type="range" min="" max="100" onchange="updateThreshold(true, 'species', event.currentTarget.value/100)"></div></td>
+	    <td><div class="slider diagTest"><input id="diagTest_slider" type="range" min="" max="100" onchange="updateThreshold(true, 'diagTest', event.currentTarget.value/100)"></div></td>
 	</tr>
 	<tr>
-	    <td><div class=""><select id="country_options" multiple=1>
-             	          	<option value="USA">U.S.A.</option>
-	                      </select></div></td>
+	    <td><div class=""><select id="country_options" multiple=1></select></div></td>
 	    <td><div class=""><select id="year_options" multiple=1></select></div></td>
 	    <td><div class=""><select id="virus_options" multiple=1></select></div></td>
 	    <td><div class=""><select id="species_options" multiple=1></select></div></td>
