@@ -1,7 +1,10 @@
 function showAllOptions(data, threshold)
 {
     var varNames = Object.keys(data);
-    console.log(varNames + " " + varNames.length);
+    if(threshold > 1)
+	threshold = threshold/100;
+    
+    // console.log(varNames + " " + varNames.length);
     for(var i = 0; i < varNames.length; i++) {
 	var v = varNames[i];
 	// alert( data[v] );
