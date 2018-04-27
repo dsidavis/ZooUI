@@ -1,6 +1,3 @@
-//XXX duplicated
-var VarNames = ['country', 'year', 'virus', 'species', 'diagTest'];
-
 
 function addResult()
 {
