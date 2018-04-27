@@ -1,0 +1,81 @@
+<html>
+
+    <script type="text/javascript" src="showOptions.js"></script>
+    <script type="text/javascript" src="showDocInfo.js"></script>
+    <script type="text/javascript" src="toggle.js">	</script>    
+    <script type="text/javascript" src="data.js"></script>
+
+    
+<body onload="addOptions('year', ModelResults['year'], .7); showDocInfo(docInfo);">
+
+
+<a href="" id="pdf" target="_blank"></a>
+<h2 id="title"></h2>
+<h2><a href="javascript:toggle('abstract')">Abstract</a></h2>
+<div id="abstract">
+</div>
+
+<div id="year"></div>
+
+<hr width="50%"/>
+
+<div class="globalThreshold">
+</div>
+
+
+<!--
+     Show the threshold values and number of items as a tooltip
+
+     Show the min max probabilities in a collapsed div that the view can toggle to display
+   -->
+
+
+<!--
+     toggle the multiple on the other selects when 2 or more items actually selected
+     to avoid erroneously generating  too many.
+
+     Undo operations.
+
+     Make sliders vertical?
+
+     Global slider that controls all sliders initially, but after any has been set separately
+     don't update that one
+
+     Restore thresholds when go to next paper.
+
+     
+   -->
+<div class="globalThreshold">
+    <table>
+	<tr><th title="10 items between .98 and .34">Country</th> <th>Year</th> <th>Virus</th> <th>Species</th> <th>Diagnostic Test</th>
+	<tr>
+	    <td><div class="slider country"><input id="country_slider" type="range" min="" max="100"></div></td>
+	    <td><div class="slider year"><input id="year_slider" type="range" min="" max="100"></div></td>
+	    <td><div class="slider virus"><input id="virus_slider" type="range" min="" max="100"></div></td>
+	    <td><div class="slider species"><input id="species_slider" type="range" min="" max="100"></div></td>
+	    <td><div class="slider diagTest"><input id="diagTest_slider" type="range" min="" max="100"></div></td>
+	</tr>
+	<tr>
+	    <td><div class=""><select id="country_options" multiple=1>
+             	          	<option value="USA">U.S.A.</option>
+	                      </select></div></td>
+	    <td><div class=""><select id="year_options" multiple=1></select></div></td>
+	    <td><div class=""><select id="virus_options" multiple=1></select></div></td>
+	    <td><div class=""><select id="species_options" multiple=1></select></div></td>
+	    <td><div class=""><select id="diagTet_options" multiple=1></select></div></td>	    
+	</th>	    
+</table>	
+<input type="button" value="Add Row"></input>    
+</div>	
+
+<div class="results">
+    <!--  We can just have a table  and add rows.
+	 Or we can add a spreadsheet widget.
+       -->
+<table id="resultsTable">
+<tr><th></th><th>Country</th> <th>Year</th> <th>Virus</th> <th>Species</th> <th>Diagnostic Test</th>	</tr>
+</table>	
+</div>    
+
+</body>	
+</html>    
