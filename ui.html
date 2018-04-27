@@ -49,10 +49,10 @@ Threshold: <input type="range" value="90" min=0 max=100 onchange='updateGlobalTh
      
    -->
 <div class="sliders">
-    <table>
+    <table border=1>
 	<tr><th title="10 items between .98 and .34">Country</th> <th>Year</th> <th>Virus</th> <th>Species</th> <th>Diagnostic Test</th>
 	<tr>
-	    <td><div class="slider country"><input id="country_slider" type="range" min="" max="100" onchange="updateThreshold(event.object, 'country')></div></td>
+	    <td><div class="slider country"><input id="country_slider" type="range" min="" max="100" onchange="updateThreshold(event.object, 'country')"></div></td>
 	    <td><div class="slider year"><input id="year_slider" type="range" min="" max="100"></div></td>
 	    <td><div class="slider virus"><input id="virus_slider" type="range" min="" max="100"></div></td>
 	    <td><div class="slider species"><input id="species_slider" type="range" min="" max="100"></div></td>
