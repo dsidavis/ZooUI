@@ -7,11 +7,11 @@ var docInfo = {
 };
 
 var ModelResults = {
-    year: { values: ["2010", "1968", "1999", "2003", "2004", "1994"],
-	    probs: [.98, .90, .82, .71, .71, .71 ] },
+    year: { values: ["2010", "1968", "1999", "2003", "2004", "1994", "2020"],
+	    probs: [.98, .90, .82, .71, .71, .5, .1] },
     country: {
 	values: ["Ireland", "Britain", "UK"],
-	probs: [.8, .76, .2]
+	probs: [.82, .76, .2]
     },
     virus: { values: ["encephalitis","getah"],
 	     probs: [1, 1]
