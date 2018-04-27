@@ -36,7 +36,6 @@ var RowNum = 1;
 
 function insertResult(vals, n)
 {
-
     var table = document.getElementById("resultsTable");
     table = table.childNodes[1]; // tbody
 
@@ -52,12 +51,10 @@ function insertResult(vals, n)
 	var td = document.createElement("td");	
 	td.innerHTML = '<img src=trashCan.jpg width=32 height=32 onclick=deleteRow("' +  tr.id + '")></img>';
 	tr.appendChild(td);
-//	td.childNodes[0].onclick = "deleteRow(" +  td.id + ");"
 	
 	for(var i = 0; i < VarNames.length; i++) {
 	    var v = VarNames[i];
 	    var pos = min(j, vals[v].length - 1);
-//	    console.log("td for " + j + " " + " and " + i  + " " + vals[v][pos]);
 	    td = document.createElement("td");
 	    td.innerHTML = vals[v][pos];
 	    tr.appendChild(td);

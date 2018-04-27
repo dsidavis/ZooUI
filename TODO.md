@@ -1,5 +1,3 @@
-+ Add results to table.
-  
 + Text items to enter new values (that we missed)
   + completion to ensure easy and correct values
      + See completion.html.
@@ -41,3 +39,5 @@
 + [done] Handle links to PDFs with spaces in the file name.   
    + No problem. Had the wrong spelling of Turell-2003.pdf
    
++ [done] Add results to table.
+   + And allow delete.
