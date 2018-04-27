@@ -39,31 +39,10 @@
 <hr width="50%" class="divider"/>
 
 <div class="globalThreshold">
-Threshold: <input id="globalThreshold_slider" type="range" value="90" min=0 max=100 onchange='updateGlobalThreshold(this)'/>
+Threshold: <input id="globalThreshold_slider" type="range" value="90" min=0 max=100 onchange='updateGlobalThreshold(this.value, true)'/>
 </div>
 
 
-<!--
-     Show the threshold values and number of items as a tooltip
-     Show the min max probabilities in a collapsed div that the view can toggle to display
-   -->
-
-
-<!--
-     toggle the multiple on the other selects when 2 or more items actually selected
-     to avoid erroneously generating  too many.
-
-     Undo operations.
-
-     Make sliders vertical?
-
-     Global slider that controls all sliders initially, but after any has been set separately
-     don't update that one
-
-     Restore thresholds when go to next paper.
-
-     
-   -->
 <div class="sliders">
     <table border=1 align="center">
 	<tr><th title="10 items between .98 and .34">Country</th> <th>Year</th> <th>Virus</th> <th>Species</th> <th>Diagnostic Test</th>
@@ -91,9 +70,12 @@ Threshold: <input id="globalThreshold_slider" type="range" value="90" min=0 max=
     <!--  We can just have a table  and add rows.
 	 Or we can add a spreadsheet widget.
        -->
+    <center>True Results</center>
+<center>
 <table id="resultsTable">
 <tr><th></th><th>Country</th> <th>Year</th> <th>Virus</th> <th>Species</th> <th>Diagnostic Test</th>	</tr>
-</table>	
+</table>
+<center>
 </div>    
 
 
@@ -103,14 +85,18 @@ Threshold: <input id="globalThreshold_slider" type="range" value="90" min=0 max=
 <tr><th></th><th>Country</th> <th>Year</th> <th>Virus</th> <th>Species</th> <th>Diagnostic Test</th>	</tr>
 
 <tr>
-<td></td>    
-<td><div class="ui-widget"> <input id="tags" ></input></div></td>
-<td><input id="" type="text"></input></td>
-<td><input id="" type="text"></input></td>
-<td><input id="" type="text"></input></td>    
-<td><input id="" type="text"></input></td>
+    <td></td>
+ <!-- For autocompletion     <td><div class="ui-widget"> <input id="tags" ></input></div></td>
+    -->
+    
+<td><input id="new_country" type="text" value="A"></input></td>
+<td><input id="new_year" type="text" value="B"></input></td>
+<td><input id="new_virus" type="text" value="C"></input></td>
+<td><input id="new_species" type="text" value="D"></input></td>    
+<td><input id="new_diagTest" type="text" value="E"></input></td>
 </tr>    
 </table>	
+<input type="button" value="Add" onclick="addNewResult()">
 
 </body>	
 </html>    

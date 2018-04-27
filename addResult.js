@@ -36,10 +36,11 @@ function insertResult(vals, n)
     var table = document.getElementById("resultsTable");
     table = table.childNodes[1]; // tbody
 
+//    console.log("insertResult: " + vals + " " + Object.keys(vals) + " " + VarNames);
     // assume the varnames are arranged in order of result table
     // Create a new tr
     //    Fill in each column.
-    console.log("creating " + n + " <tr>s with " + VarNames.length );
+//    console.log("creating " + n + " <tr>s with " + VarNames.length + " columns");
     for(var j = 0; j < n ; j++) {
 	var tr = document.createElement("tr");
 	tr.id = "RowNum_" + RowNum;
@@ -51,9 +52,11 @@ function insertResult(vals, n)
 	
 	for(var i = 0; i < VarNames.length; i++) {
 	    var v = VarNames[i];
-	    var pos = min(j, vals[v].length - 1);
+//	    console.log(v + " -> " + vals[v] + " " + vals[v].length);
+	    var pos = min(n, vals[v].length - 1);
 	    td = document.createElement("td");
 	    td.innerHTML = vals[v][pos];
+//	    console.log(v +  " => " + pos + " " + vals[v][pos] + " : " + vals[v]);
 	    tr.appendChild(td);
 	}
 	table.appendChild(tr);
@@ -76,3 +79,18 @@ function deleteRow(id)
     var obj = document.getElementById(id);
     obj.parentNode.removeChild(obj);
 }
+
+
+
+function addNewResult()
+{
+    var n = 0, i;
+    var ans = {};
+    for(i = 0; i < VarNames.length; i++){
+	var v = VarNames[i];
+	var obj = document.getElementById("new_" + v);
+	ans[v] =  [obj.value];
+    }
+    insertResult(ans, 1);
+}
+	
