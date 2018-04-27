@@ -10,5 +10,4 @@ function showDocInfo(info)
 	    obj.href = info[v];
 	}
     }
-
 }
