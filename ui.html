@@ -3,13 +3,20 @@
     <script type="text/javascript" src="showOptions.js"></script>
     <script type="text/javascript" src="showDocInfo.js"></script>
     <script type="text/javascript" src="toggle.js">	</script>
-    <script type="text/javascript" src="sliders.js">	</script>        
-    <script type="text/javascript" src="data.js" encoding="UTF-8"></script>
+    <script type="text/javascript" src="sliders.js">	</script>
+    <script type="text/javascript" src="addResult.js">	</script>            
+    <script type="text/javascript" src="data.js" charset="UTF-8"></script>
 
     <link type="text/css" href="ui.css" rel="stylesheet"/>
+
+
+
 </head>
-    
-<body onload="addOptions('year', ModelResults['year'], .7); showDocInfo(docInfo);">
+
+<!--
+   addOptions('year', ModelResults['year'], .7);
+ -->
+<body onload="showDocInfo(docInfo); showAllOptions(ModelResults, .7)">
 
 
 <a href="" id="pdf" target="_blank"></a>
@@ -25,6 +32,8 @@
 Threshold: <input type="range" value="90" min=0 max=100 onchange='updateGlobalThreshold(this)'/>
 </div>
 
+
+<img src=trashCan.jpg width=32 height=32 onclick="alert('bob')"></img>
 
 <!--
      Show the threshold values and number of items as a tooltip
@@ -52,11 +61,11 @@ Threshold: <input type="range" value="90" min=0 max=100 onchange='updateGlobalTh
     <table border=1 align="center">
 	<tr><th title="10 items between .98 and .34">Country</th> <th>Year</th> <th>Virus</th> <th>Species</th> <th>Diagnostic Test</th>
 	<tr>
-	    <td><div class="slider country"><input id="country_slider" type="range" min="" max="100" onchange="updateThreshold(event.object, 'country')"></div></td>
-	    <td><div class="slider year"><input id="year_slider" type="range" min="" max="100"></div></td>
-	    <td><div class="slider virus"><input id="virus_slider" type="range" min="" max="100"></div></td>
-	    <td><div class="slider species"><input id="species_slider" type="range" min="" max="100"></div></td>
-	    <td><div class="slider diagTest"><input id="diagTest_slider" type="range" min="" max="100"></div></td>
+	    <td><div class="slider country"><input id="country_slider" type="range" min="" max="100" onchange="updateThreshold(true, 'country')"></div></td>
+	    <td><div class="slider year"><input id="year_slider" type="range" min="" max="100" onchange="updateThreshold(true, 'year')"></div></td>
+	    <td><div class="slider virus"><input id="virus_slider" type="range" min="" max="100" onchange="updateThreshold(true, 'virus')"></div></td>
+	    <td><div class="slider species"><input id="species_slider" type="range" min="" max="100" onchange="updateThreshold(true, 'species')"></div></td>
+	    <td><div class="slider diagTest"><input id="diagTest_slider" type="range" min="" max="100" onchange="updateThreshold(true, 'diagTest')"></div></td>
 	</tr>
 	<tr>
 	    <td><div class=""><select id="country_options" multiple=1>
@@ -68,7 +77,7 @@ Threshold: <input type="range" value="90" min=0 max=100 onchange='updateGlobalTh
 	    <td><div class=""><select id="diagTest_options" multiple=1></select></div></td>	    
 	</th>	    
 </table>	
-<input type="button" value="Add Row"></input>    
+<input type="button" value="Add Row" onclick="addResult()"></input>    
 </div>	
 
 <hr width="50%" class="divider"/>
@@ -87,6 +96,15 @@ Threshold: <input type="range" value="90" min=0 max=100 onchange='updateGlobalTh
 <h2>Values not in results</h2>
 <table id="resultsTable">
 <tr><th></th><th>Country</th> <th>Year</th> <th>Virus</th> <th>Species</th> <th>Diagnostic Test</th>	</tr>
+
+<tr>
+<td></td>    
+<td><div class="ui-widget"> <input id="tags" ></input></div></td>
+<td><input id="" type="text"></input></td>
+<td><input id="" type="text"></input></td>
+<td><input id="" type="text"></input></td>    
+<td><input id="" type="text"></input></td>
+</tr>    
 </table>	
 
 </body>	
