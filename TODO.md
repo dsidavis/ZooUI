@@ -1,9 +1,13 @@
 # TODO Zoonotics UI
 
-1. Add a way for user to indicate this item is wrong and why.
+1. Sort out the row numbers on the table when we restore the results and then add new ones.
+   Need to make them unique. Otherwise can delete the wrong one.
 
 1. Avoid adding a row that is already there.
 
+1. Add a way for user to indicate this item is wrong and why.
+   + Maybe just a free form text field with a different submission script.
+   
 1. [check] Use current results to build table on load.
    + Now in the html field of the currentResults.
 
@@ -23,8 +27,6 @@
 
 # Appearance
 
-1. Make the menu selection items bigger.
-
 1. Show scrollbars on variable item select menu with more options than appear to inform viewer there are more.
 
 1. [low] Show the value of the slider (perhaps in the variable name text above it)
@@ -38,7 +40,6 @@
 + Setup apache server with CGI permissions.
 
 + Use CAS login
-
 
 + Create the dummy currentResults.js for each directory.
   + Code is on dsi machine as an R script.
