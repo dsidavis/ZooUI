@@ -1,10 +1,12 @@
 # TODO Zoonotics UI
 
-1. Add error checking to ensure one item is selected in each variable
-  + or shall we allow an empty value?
 
-1. toggle the multiple=1 on the other selects when 2 or more items actually selected to avoid erroneously generating too many.
-
+1. Give warning if more than one variable has multiple selections. Currently only using the one
+   with the maximum.
+   
+1. toggle the multiple=1 on the other selects when 2 or more items actually selected to avoid
+   erroneously generating too many.
+   
 1. autocompletion to ensure easy and correct values on new values text items.
      + See completion.html.
      + jquery
@@ -13,39 +15,52 @@
 1. Undo operations.
 
 
-1. Change the slider for Virus. Since all 1's problem. Items disappear.
-
 # Appearance
 
 1. Show scrollbars on variable item select menu with more options than appear to inform viewer there are more.
 
-1. Put tooltip on the variable name to indicate probability range and number of items
-	 
-1. Show the ranges of the probabilities on the sliders.
-    + let them display as 0 to 1 but put ticks showing actual range limits.
-
 1. Show the value of the slider (perhaps in the variable name text above it)
 
-1.  Make sliders vertical?
+1. Make sliders vertical?
 
 # CGI/Submission
 
++ Put the name of the directory/paper into the html/js file so can use for submission.
+
 + Link to next PDF
 
-+ Preserve threshold settings across paper.
++ Use CAS login
+
++ Create the dummy currentResults.js for each directory.
 
 # R
 
 + Generate the data.js for each paper.
+   + Matt's done this.
 
 # Low
 
-+ tooltips summarizing number of items and probability range
++ Preserve threshold settings across paper.
 
-+ 
++ tooltips summarizing number of items and probability range
+   + Already in the number of items/probability info.
 
 
 # Done
+
+1. [fixed] Select 2 years, only one shows up but two rows in the resulting table.
+
+1. [done] Add error checking to ensure one item is selected in each variable
+  + [Yes] or shall we allow an empty value?
+
+
+1. [not needed] Put tooltip on the variable name to indicate probability range and number of items
+   + now the range is on each end of the slider.
+	 
+1. [done] Show the ranges of the probabilities on the sliders.
+    + let them display as 0 to 1 but put ticks showing actual range limits.
+
+1. [fixed] Change the slider for Virus. Since all 1's problem. Items disappear.
 
 + [done] Connect sliders to update display of items in select menus.
   + [done] set varThresholds for slider if user moves it directly.

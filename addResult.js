@@ -55,7 +55,7 @@ function insertResult(vals, n)
 //   console.log(v + " -> " + vals[v] + " " + vals[v].length);
 	    var pos = min(j, vals[v].length - 1);
 	    td = document.createElement("td");
-	    td.innerHTML = vals[v][pos];
+	    td.innerHTML = pos > -1 ? vals[v][pos] : "(none)";
 //   console.log(v +  " => " + pos + " " + vals[v][pos] + " : " + vals[v]);
 	    tr.appendChild(td);
 	}

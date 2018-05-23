@@ -13,3 +13,8 @@ a#pdf {
 td, th, tr {
     text-align: center;
 }
+
+
+div.help {
+    float: right;
+}

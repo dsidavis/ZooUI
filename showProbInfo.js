@@ -42,5 +42,9 @@ function addVarTooltips(data)
 	el.innerHTML = probs[0];
 	el = document.getElementById(ids[i] + "_slider_min");
 	el.innerHTML = probs[probs.length - 1];
+
+	el = document.getElementById(ids[i] + "_slider");
+	el.max = probs[0]*100;		
+	el.min = probs[probs.length - 1]*100;
     }
 }

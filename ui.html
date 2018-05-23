@@ -22,16 +22,24 @@
 <body onload="showDocInfo(docInfo);  showProbInfo(ModelResults); showAllOptions(ModelResults, .7); updateGlobalThreshold(70, false); addVarTooltips(ModelResults); ">
 
 
+<div class="help">
+<a href="help.html" onclick="window.open('help.html', 
+                         'newwindow', 
+                         'width=300,height=250'); 
+              return false;">Help</a>    
+</div>    
+    
 <a href="" id="pdf" target="_blank"></a>
 <h2 id="title"></h2>
 <div class="year">Year: <b id="year"></b></div>
 <h2><a href="javascript:toggle('abstract')" title="Click to toggle showing abstract">Abstract</a></h2>
 <div id="abstract"  hidden=1>
-n</div>
+</div>
+
 
 
 <div style="float: right;">
-<a href="javascript:toggle('ProbInfo')">+Probability Info.</a>
+<a href="javascript:toggle('ProbInfo')">+Number of Items<br/> and Probability Info.</a>
 <div id="ProbInfo" class="ProbInfo" hidden=1>
 </div>
 </div>
@@ -69,7 +77,7 @@ Threshold: <input id="globalThreshold_slider" type="range" value="90" min=0 max=
 <hr width="50%" class="divider"/>
 
 
-<input type="button" value="Finish &amp; Send Results" onclick="console.log(JSON.stringify(getResults()))">
+<input type="button" value="Finish &amp; Send Results" onclick="console.log(JSON.stringify(getResults())); SubmitResults(getResults(), makeURL(PaperName));">
 
 <div class="results">
     <!--  We can just have a table  and add rows.

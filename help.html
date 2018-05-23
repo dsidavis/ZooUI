@@ -1,0 +1,65 @@
+<html>
+    <body>
+
+<h1>Help</h1>
+
+<p>
+This simple interface allows you to identify one or more  combinations
+of the 5 variables from a spillover paper.
+
+The UI provides the terms that we found for a given paper
+for each of the 5 variables of interest.
+</p>
+
+<p>
+There are a lot of possible items for each variable.
+But not all of them are as likely to be relevant.
+We have ordered them based on what we (the model) think is most likely.
+We show them all.  However, you can hide some of the items
+by changing the value of the  slider above  the list of items for that variable.
+By moving the slider up, you hide items. The slider's value indicates that
+all of the items to be show have to have a score at least as high as the slider's value.    
+So if we move the slider to the left, we include more items as we are lowering the
+score needed to appear in the list.
+So as the model gets better, we can keep the scores high to only look at a few items.
+This is the threshold for the classifier to include an item or not.
+We need to learn this to avoid type I and II errors.
+
+<p>
+ There is one general slider that you can use to control
+all of the list of items/values simultaneously.
+This is slightly above and to the left of the collection of 5 individual sliders.
+As you move this, it changes all of the values in the individual sliders
+to the same value - <i>except those sliders that you have already changed</i>.
+
+    
+<h2>Context</h2>
+You'll need to look at the paper to determine which terms and combinations are pertinent.
+To help you, we show the title and the year for the paper and can toggle displaying the abstract.
+And we also provide a link to the PDF for the entire document.
+(If you want this in a separate window rather than a separate tab, let us know.)
+
+<h3>Abstract</h2>
+<p>
+You can read the abstract directly in the page by clicking on the link named "Abstract".
+And then you can hide it again by clicking on the link again. So you can toggle it at will.    
+
+<h3>The PDF for the Paper</h3>    
+ <p>
+If you want to look at the PDF for the paper to go beyond the abstract, you can click on the link
+at the very top-left of the page.
+If it would be useful, we could add functionality to this interface to show the pages of the PDF within this
+ Web page.   When you selected a value for one of the variables, we could show all the pages and text in which this occurs.
+This may not work for well 
+     
+
+<h2>Number of Items and the Probability Ranges</h2>
+You can look at the number of items and the probability/score ranges for the differen
+variables by clicking on the "Probability Info" link on the right of the page above the table
+of sliders.
+This tells you how many items we identified and the maximum and minimum score from the classifier.
+
+
+</body>	
+</html>    
+    
