@@ -1,10 +1,5 @@
 # TODO Zoonotics UI
 
-1. When multiple values selected in two or more variables, get cross over.
-
-1. [fix] Give warning if more than one variable has multiple selections. Currently only using the one
-   with the maximum.
-
 1. [check] Sort out the row numbers on the table when we restore the results and then add new ones.
     Need to make them unique. Otherwise can delete the wrong one.
 	+ Should be okay now that we are using unique identifiers.
@@ -18,7 +13,6 @@
    
 1. [check] Use current results to build table on load.
    + Now in the html field of the currentResults.
-
   
 1. toggle the multiple=1 on the other selects when 2 or more items actually selected to avoid
    erroneously generating too many.
@@ -71,12 +65,20 @@
 
 
 # Done
+
+1. [fixed] Some rows give uids that give a syntax error when we try to delete by clicking on the garbage
+   can.
+	 + It is the 11-19 and 11-21 in Lee. It is the word 'and'
+     + Can't have space in the id.
+	 + Used a different approach to avoid the id and use this and get the parent nodes.
+
+1. [done] When multiple values selected in two or more variables, get cross over.
+
+1. [done] Give warning if more than one variable has multiple selections. Currently only using the one
+   with the maximum.
+
 1. [done] How to unselect all items in a menu item - in case one is selected but none apply to current row
    being created.
-
-1. [done] Some rows give uids that give a syntax error when we try to delete by clicking on the garbage
-   can.
-     + Can't have space in the id.
    
 1. [done] Fix up deleteRow() to use this and find the parent tr.
 

@@ -13,7 +13,8 @@ function addResult()
 	var sel = document.getElementById(v + "_options");
 
 	var tmp = getSelectedElements(sel);
-	if(tmp.length >= n && n > 1) {
+	
+	if(tmp.length >= n && tmp.length > 1) {
 	    numMultiSelect++;
 	    msg += " " + VarNames[i];
 	}
@@ -25,8 +26,8 @@ function addResult()
 	sels[v] = tmp;
     }
 
-    if(numMultiSelect > 0)
-	alert(numMultiSelect + " variables had multiple selected items. Only using the ones from " + VarNames[idx]);
+    if(numMultiSelect > 1)
+	alert(numMultiSelect + " variables had multiple selected items ("+ msg + "). Only using the multiple values from " + VarNames[idx] + " and the first selected value from the others.");
 
     console.log("primary variable: " + idx + " " + VarNames[idx]);
     insertResult(sels, n, false, idx);
@@ -85,12 +86,15 @@ function insertResult(vals, n, manual, primaryIndex = 0)
 	    tr.appendChild(td);
 	}
 
-	uid = uid.replace(' ', '_');
+//	uid = uid.replace(' ', '_');
+//	uid = uid.replace('and', '\&');
+//	uid = uid.replace('or', '');
 //	console.log("adding row " + uid + " to existing " +  RowIds)	;
 	if(!(RowIds[uid])) {
 
 	    td = document.createElement("td");	
-	    td.innerHTML = '<img src="../Icons/trashCan.jpg" width=32 height=32 onclick=deleteRow("' +  uid + '")></img>';
+//	    td.innerHTML = '<img src="../Icons/trashCan.jpg" width=32 height=32 onclick=deleteRow("' +  uid + '")></img>'; 
+	    td.innerHTML = '<img src="../Icons/trashCan.jpg" width=32 height=32 onclick="deleteRowx(this)"></img>';
 	    tr.appendChild(td);
 	    
 	    tr.id = uid;
@@ -120,11 +124,19 @@ function max(a, b)
 }
 
 
+// don't need this one anymore.
 function deleteRow(id)
 {
     var obj = document.getElementById(id);
     obj.parentNode.removeChild(obj);
     RowIds[id] = false;
+}
+
+function deleteRowx(obj)
+{
+    obj = obj.parentNode.parentNode; // img->td->tr
+    obj.parentNode.removeChild(obj);
+    RowIds[obj.id] = false;
 }
 
 
