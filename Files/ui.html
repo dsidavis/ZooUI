@@ -22,7 +22,7 @@
 <!--
    addOptions('year', ModelResults['year'], .7);
  -->
-<body onload="showDocInfo(docInfo);  showProbInfo(ModelResults); showAllOptions(ModelResults, UIConfig.globalThreshold); updateGlobalThreshold(UIConfig.GlobalThreshold, false); addVarTooltips(ModelResults); showCurResults(currentResults);">
+<body onload="showDocInfo(docInfo);  showProbInfo(ModelResults); showAllOptions(ModelResults, UIConfig.globalThreshold); updateGlobalThreshold(UIConfig.GlobalThreshold, false); addVarTooltips(ModelResults); showCurResults(currentResults); RowIds = currentResults['rowIds'];">
 
 
 <div class="help">
@@ -80,7 +80,7 @@ Threshold: <input id="globalThreshold_slider" type="range" value="90" min=0 max=
 <hr width="50%" class="divider"/>
 
 
-<input type="button" value="Finish &amp; Send Results" onclick="console.log(JSON.stringify(getResults())); SubmitResults(getResults(), getHTMLResults(), makeURL());">
+<input type="button" value="Finish &amp; Send Results" onclick="console.log(JSON.stringify(getResults())); SubmitResults(getResults(), getHTMLResults(), RowIds, makeURL());">
 
 <div class="results">
     <!--  We can just have a table  and add rows.
@@ -89,8 +89,12 @@ Threshold: <input id="globalThreshold_slider" type="range" value="90" min=0 max=
 <center>True Results</center>
 <center>
 <div id="ResultTableContainer">    
-<table id="resultsTable">
-<tr><th></th><th>Country</th> <th>Year</th> <th>Virus</th><th>Species</th><th>Diagnostic Test</th></tr>
+<table>
+<thead>	
+<tr><th>Country</th> <th>Year</th> <th>Virus</th><th>Species</th><th>Diagnostic Test</th><th></th></tr>
+</thead>
+<tbody id="resultsTable">
+</tbody>
 </table>
 </div>
 <center>

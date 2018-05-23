@@ -1,14 +1,15 @@
 # TODO Zoonotics UI
 
-1. Sort out the row numbers on the table when we restore the results and then add new ones.
-   Need to make them unique. Otherwise can delete the wrong one.
+1. How to unselect all items in a menu item - in case one is selected but none apply to current row
+   being  created.
 
-1. Add RowIds to the results we submit.
+1. [check] Sort out the row numbers on the table when we restore the results and then add new ones.
+    Need to make them unique. Otherwise can delete the wrong one.
+	+ Should be okay now that we are using unique identifiers.
 
-1. Fix up deleteRow() to use this and find the parent tr.
+1. [check] Send the contents of the tbody and make the thead for the results table separate.
 
-1. [check] Avoid adding a row that is already there.
-   + Seems to work
+1. [check] Add RowIds to the results we submit.
 
 1. Add a way for user to indicate this item is wrong and why.
    + Maybe just a free form text field with a different submission script.
@@ -70,6 +71,15 @@
 
 
 # Done
+
+1. [done] Some rows give uids that give a syntax error when we try to delete by clicking on the garbage
+   can.
+     + Can't have space in the id.
+   
+1. [done] Fix up deleteRow() to use this and find the parent tr.
+
+1. [check] Avoid adding a row that is already there.
+   + Seems to work
 
 1. [done] restore the results for the two tables back into the relevant tables.
    + Already only in one table.

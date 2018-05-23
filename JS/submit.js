@@ -12,7 +12,7 @@ function getHTMLResults()
     return( document.getElementById('resultsTable').innerHTML );
 }
 
-function SubmitResults(data, html, URL)
+function SubmitResults(data, html, rowIds, URL)
 {
     if(!checkResults(data))
 	return(false);
@@ -34,7 +34,8 @@ function SubmitResults(data, html, URL)
     xhr.onreadystatechange = getSubmitResult;
     xhr.send(JSON.stringify({
 	results: data,
-	html: html
+	html: html,
+	rowIds: rowIds
     }));
 }
 
