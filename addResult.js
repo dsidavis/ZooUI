@@ -40,7 +40,7 @@ function insertResult(vals, n)
     // assume the varnames are arranged in order of result table
     // Create a new tr
     //    Fill in each column.
-//    console.log("creating " + n + " <tr>s with " + VarNames.length + " columns");
+//  console.log("creating " + n + " <tr>s with " + VarNames.length + " columns");
     for(var j = 0; j < n ; j++) {
 	var tr = document.createElement("tr");
 	tr.id = "RowNum_" + RowNum;
@@ -52,11 +52,11 @@ function insertResult(vals, n)
 	
 	for(var i = 0; i < VarNames.length; i++) {
 	    var v = VarNames[i];
-//	    console.log(v + " -> " + vals[v] + " " + vals[v].length);
-	    var pos = min(n, vals[v].length - 1);
+//   console.log(v + " -> " + vals[v] + " " + vals[v].length);
+	    var pos = min(j, vals[v].length - 1);
 	    td = document.createElement("td");
 	    td.innerHTML = vals[v][pos];
-//	    console.log(v +  " => " + pos + " " + vals[v][pos] + " : " + vals[v]);
+//   console.log(v +  " => " + pos + " " + vals[v][pos] + " : " + vals[v]);
 	    tr.appendChild(td);
 	}
 	table.appendChild(tr);
