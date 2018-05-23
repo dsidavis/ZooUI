@@ -29,13 +29,15 @@ There are many moving parts to this, and many need to be installed in different 
 + The CSS directory is copied or symlinked to a subdirectory of the Papers directory.
 
 
+## Icons
+Put the Icons directory here under Papers.
 
 So we should have
 
 ```
-     Papers directory                           CGI       
-   /   |   \       \          \
- JS   CSS  Paper1  Paper2 .... PaperN
+     Papers directory                                CGI       
+   /   |    \       \          \
+ JS   CSS   Icons   Paper1  Paper2 .... PaperN
 ..   ui.css                     ui.html
 ..                              currentResults.js
                                 data.js
