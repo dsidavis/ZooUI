@@ -3,7 +3,12 @@
 1. Sort out the row numbers on the table when we restore the results and then add new ones.
    Need to make them unique. Otherwise can delete the wrong one.
 
-1. Avoid adding a row that is already there.
+1. Add RowIds to the results we submit.
+
+1. Fix up deleteRow() to use this and find the parent tr.
+
+1. [check] Avoid adding a row that is already there.
+   + Seems to work
 
 1. Add a way for user to indicate this item is wrong and why.
    + Maybe just a free form text field with a different submission script.

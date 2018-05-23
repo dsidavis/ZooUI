@@ -31,6 +31,8 @@ function getSelectedElements(obj)
 
 var RowNum = 1;
 
+var RowIds = {};
+
 function insertResult(vals, n, manual)
 {
     var table = document.getElementById("resultsTable");
@@ -51,18 +53,35 @@ function insertResult(vals, n, manual)
 	var td = document.createElement("td");	
 	td.innerHTML = '<img src="../Icons/trashCan.jpg" width=32 height=32 onclick=deleteRow("' +  tr.id + '")></img>';
 	tr.appendChild(td);
-	
+
+	var uid = "";
 	for(var i = 0; i < VarNames.length; i++) {
 	    var v = VarNames[i];
 //   console.log(v + " -> " + vals[v] + " " + vals[v].length);
 	    var pos = min(j, vals[v].length - 1);
 	    td = document.createElement("td");
-	    td.innerHTML = pos > -1 ? vals[v][pos] : "(none)";
+	    var val = pos > -1 ? vals[v][pos] : "(none)"
+	    uid = uid + "!!!" + val;
+	    td.innerHTML = val;
 //   console.log(v +  " => " + pos + " " + vals[v][pos] + " : " + vals[v]);
 	    tr.appendChild(td);
 	}
-	table.appendChild(tr);
+	console.log("adding row " + uid + " to existing " +  RowIds)	;
+	if(!(RowIds[uid])) {
+	    tr.id = uid;
+	    table.appendChild(tr);
+	    RowIds[uid] = true;
+	}
     }
+}
+
+function rowExists(id, ids)
+{
+    for(var i = 0; i < ids.length; i++) {
+	if(id == ids[i])
+	    return(true);
+    }
+    return(false);
 }
 
 function min(a, b)
