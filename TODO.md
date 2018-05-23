@@ -1,7 +1,9 @@
 # TODO Zoonotics UI
 
-1. How to unselect all items in a menu item - in case one is selected but none apply to current row
-   being  created.
+1. When multiple values selected in two or more variables, get cross over.
+
+1. [fix] Give warning if more than one variable has multiple selections. Currently only using the one
+   with the maximum.
 
 1. [check] Sort out the row numbers on the table when we restore the results and then add new ones.
     Need to make them unique. Otherwise can delete the wrong one.
@@ -17,9 +19,7 @@
 1. [check] Use current results to build table on load.
    + Now in the html field of the currentResults.
 
-1. Give warning if more than one variable has multiple selections. Currently only using the one
-   with the maximum.
-   
+  
 1. toggle the multiple=1 on the other selects when 2 or more items actually selected to avoid
    erroneously generating too many.
    
@@ -71,6 +71,8 @@
 
 
 # Done
+1. [done] How to unselect all items in a menu item - in case one is selected but none apply to current row
+   being created.
 
 1. [done] Some rows give uids that give a syntax error when we try to delete by clicking on the garbage
    can.
