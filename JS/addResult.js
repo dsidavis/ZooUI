@@ -4,17 +4,32 @@ function addResult()
     var sels = {};
 
     var n = 0, i;
+    // following 3 vars are for giving a warning if multiple variables have multiple items selected.
+    var msg = "";
+    var numMultiSelect = 0;
+    var idx = -1;
     for(i = 0; i < VarNames.length; i++) {
 	var v = VarNames[i];
 	var sel = document.getElementById(v + "_options");
 
 	var tmp = getSelectedElements(sel);
+	if(tmp.length >= n && n > 1) {
+	    numMultiSelect++;
+	    msg += " " + VarNames[i];
+	}
+	if(tmp.length > n)
+	    idx = i;
 	n = tmp.length > n ? tmp.length : n;
+
 	console.log("max = " + n);
 	sels[v] = tmp;
     }
 
-    insertResult(sels, n, false);
+    if(numMultiSelect > 0)
+	alert(numMultiSelect + " variables had multiple selected items. Only using the ones from " + VarNames[idx]);
+
+    console.log("primary variable: " + idx + " " + VarNames[idx]);
+    insertResult(sels, n, false, idx);
 }
 
 function getSelectedElements(obj)
@@ -33,10 +48,11 @@ var RowNum = 1;
 
 var RowIds = {};
 
-function insertResult(vals, n, manual)
+function insertResult(vals, n, manual, primaryIndex = 0)
 {
     var table = document.getElementById("resultsTable");
-    table = table.childNodes[1]; // tbody
+// now uising an explicit tbody and that is what resultsTable gives us.
+//    table = table.childNodes[1]; // tbody
 
 //    console.log("insertResult: " + vals + " " + Object.keys(vals) + " " + VarNames);
     // assume the varnames are arranged in order of result table
@@ -44,7 +60,7 @@ function insertResult(vals, n, manual)
     //    Fill in each column.
 //  console.log("creating " + n + " <tr>s with " + VarNames.length + " columns");
     for(var j = 0; j < n ; j++) {
-	var tr = document.createElement("tr");
+	var tr = document.createElement("tr"), td;
 	tr.id = "RowNum_" + RowNum;
 	RowNum = RowNum + 1;
 	if(manual)
@@ -54,9 +70,15 @@ function insertResult(vals, n, manual)
 	for(var i = 0; i < VarNames.length; i++) {
 	    var v = VarNames[i];
 //   console.log(v + " -> " + vals[v] + " " + vals[v].length);
-	    var pos = min(j, vals[v].length - 1);
+	    var pos;
+	    if(i == primaryIndex)
+		pos = min(j, vals[v].length - 1);
+	    else
+		pos = 0;
+	    
 	    td = document.createElement("td");
 	    var val = pos > -1 ? vals[v][pos] : "(none)"
+
 	    uid = uid + "!!!" + val;
 	    td.innerHTML = val;
 //   console.log(v +  " => " + pos + " " + vals[v][pos] + " : " + vals[v]);
@@ -67,7 +89,7 @@ function insertResult(vals, n, manual)
 //	console.log("adding row " + uid + " to existing " +  RowIds)	;
 	if(!(RowIds[uid])) {
 
-	    var td = document.createElement("td");	
+	    td = document.createElement("td");	
 	    td.innerHTML = '<img src="../Icons/trashCan.jpg" width=32 height=32 onclick=deleteRow("' +  uid + '")></img>';
 	    tr.appendChild(td);
 	    
