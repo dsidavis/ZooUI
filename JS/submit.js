@@ -1,8 +1,9 @@
 function makeURL()
 {
-    var paperDir = basename(dirname(window.location.href));
-    console.log("location - " + paperDir);
-    return("http://localhost/~duncan/cgi/submit.cgi");
+//    var paperDir = basename(dirname(window.location.href));
+//    console.log("location - " + paperDir);
+//    return("http://localhost/~duncan/cgi/submit.cgi");
+    return(UIConfig.SubmitURL);
 
 }
 
