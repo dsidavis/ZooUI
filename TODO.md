@@ -1,5 +1,14 @@
 # TODO Zoonotics UI
 
+1. Add a way for user to indicate this item is wrong and why.
+
+1. Avoid adding a row that is already there.
+	
+1. restore the results for the two tables back into the relevant tables.
+   + Only in one table.
+
+1. Use current results to build table on load.
+   + Now in the html field of the currentResults.
 
 1. Give warning if more than one variable has multiple selections. Currently only using the one
    with the maximum.
@@ -13,19 +22,24 @@
 	 + avoid putting text below button.
 
 1. Undo operations.
+     + Can delete rows.
 
 
 # Appearance
 
+1. Make the menu selection items bigger.
+
 1. Show scrollbars on variable item select menu with more options than appear to inform viewer there are more.
 
-1. Show the value of the slider (perhaps in the variable name text above it)
+1. [low] Show the value of the slider (perhaps in the variable name text above it)
 
 1. Make sliders vertical?
 
 # CGI/Submission
 
-+ Put the name of the directory/paper into the html/js file so can use for submission.
++ [ok] Put the name of the directory/paper into the html/js file so can use for submission.
+   + not needed as we get this in the CGI script via the HTTP_REFERER variable.
+   + It is the docInfo variable in data.js.
 
 + Link to next PDF
 
@@ -35,7 +49,9 @@
 
 # R
 
-+ Generate the data.js for each paper.
++ Figure out which year to use - epitator or our own.
+
++ [fix but mostly done] Generate the data.js for each paper.
    + Matt's done this.
 
 # Low
@@ -47,6 +63,15 @@
 
 
 # Done
+
+1. [done] Mark the elements in results as to which mechanism they were created with - menu item selection
+   or manually entered in table below.
+    + Class on the tr
+
+1. [done] include results from manually generated table.
+   + Already there?
+
+1. [done] Put garbage can image in place.
 
 1. [fixed] Select 2 years, only one shows up but two rows in the resulting table.
 

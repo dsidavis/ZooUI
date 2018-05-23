@@ -1,5 +1,5 @@
 hr.divider {
-    height: 4px;    
+  height: 4px;    
   //  padding: 20px;
   background-color: red;
   border-color: red;  
@@ -14,7 +14,10 @@ td, th, tr {
     text-align: center;
 }
 
-
 div.help {
     float: right;
+}
+
+tr.manual {
+    background-color: lightgrey;
 }

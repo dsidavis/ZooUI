@@ -2,15 +2,19 @@
 echo "Content-type: text/html";
 echo "";
 
+
 DIR=`echo $HTTP_REFERER | sed -e 's|/ui.html$||'  | sed -e 's|.*/||' `
 
-echo "var currentResults = " > ${DIR}.out
-cat >> ${DIR}.out
-echo ";" >> ${DIR}.out
+BASE_DIR=../ZooUI_files
+OUT=${DIR}.out
+
+echo "var currentResults = " > ${OUT}
+cat >> ${OUT}
+echo ";" >> ${OUT}
 
 
 #echo "dir = $DIR"
-echo "Stored results for $DIR"
+echo "Stored results for $BASE_DIR/$OUT"
 
 env
 

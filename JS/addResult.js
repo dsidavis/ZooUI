@@ -14,7 +14,7 @@ function addResult()
 	sels[v] = tmp;
     }
 
-    insertResult(sels, n);
+    insertResult(sels, n, false);
 }
 
 function getSelectedElements(obj)
@@ -31,7 +31,7 @@ function getSelectedElements(obj)
 
 var RowNum = 1;
 
-function insertResult(vals, n)
+function insertResult(vals, n, manual)
 {
     var table = document.getElementById("resultsTable");
     table = table.childNodes[1]; // tbody
@@ -45,9 +45,11 @@ function insertResult(vals, n)
 	var tr = document.createElement("tr");
 	tr.id = "RowNum_" + RowNum;
 	RowNum = RowNum + 1;
+	if(manual)
+           tr.className = "manual";
 
 	var td = document.createElement("td");	
-	td.innerHTML = '<img src=trashCan.jpg width=32 height=32 onclick=deleteRow("' +  tr.id + '")></img>';
+	td.innerHTML = '<img src="../Icons/trashCan.jpg" width=32 height=32 onclick=deleteRow("' +  tr.id + '")></img>';
 	tr.appendChild(td);
 	
 	for(var i = 0; i < VarNames.length; i++) {
@@ -91,6 +93,6 @@ function addNewResult()
 	var obj = document.getElementById("new_" + v);
 	ans[v] =  [obj.value];
     }
-    insertResult(ans, 1);
+    insertResult(ans, 1, true);
 }
 	
