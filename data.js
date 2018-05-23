@@ -8,19 +8,25 @@ var docInfo = {
 
 var ModelResults = {
     year: { values: ["2010", "1968", "1999", "2003", "2004", "1994", "2020"],
-	    probs: [.98, .90, .82, .71, .71, .5, .1] },
+	    probs: [.98, .90, .82, .71, .71, .5, .1],
+	    section: ["title;abstract", "", "", "", "", "", ""]
+	  },
     country: {
 	values: ["Ireland", "Britain", "UK"],
-	probs: [.82, .76, .2]
+	probs: [.82, .76, .2],
+       section: ["title;abstract", "methods", ""]	
     },
     virus: { values: ["encephalitis","getah"],
-	     probs: [1, 1]
+	     probs: [1, 1],
+ 	    section: ["title;abstract", "methods"]		     
 	   },
     diagTest: { values: ["molecular", "isolation"],
-		probs: [.99, .7]
+		probs: [.99, .7],
+                section: ["title;abstract", "methods"]	
 	      },
     species: {
 	values: ["mosquito"],
-	probs: [.78]
+	probs: [.78],
+        section: ["title;abstract"]		
     }
 };
