@@ -1,11 +1,9 @@
 # TODO Zoonotics UI
 
-1. Collect results and output as JSON.
-
 1. Add error checking to ensure one item is selected in each variable
   + or shall we allow an empty value?
 
-1. toggle the multiple=1 on the other selects when 2 or more items actually selected to avoid erroneously generating  too many.
+1. toggle the multiple=1 on the other selects when 2 or more items actually selected to avoid erroneously generating too many.
 
 1. autocompletion to ensure easy and correct values on new values text items.
      + See completion.html.
@@ -13,6 +11,9 @@
 	 + avoid putting text below button.
 
 1. Undo operations.
+
+
+1. Change the slider for Virus. Since all 1's problem. Items disappear.
 
 # Appearance
 
@@ -77,3 +78,7 @@
    + Put in the data.js
 
 1. [done] Text items to enter new values (that we missed)
+
+1. [done] Collect results and output as JSON.
+
+1. tooltips on the choice items to indicate which sections they came from.

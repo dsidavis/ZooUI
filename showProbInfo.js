@@ -29,3 +29,18 @@ function getRange(x)
     }
     return(r);
 }
+
+
+function addVarTooltips(data)
+{
+    var ids = Object.keys(data);
+    var n = ids.length;
+    for(var i = 0; i < n; i++) {
+	var probs = data[ids[i]]['probs'];
+	
+	var el = document.getElementById(ids[i] + "_slider_max");
+	el.innerHTML = probs[0];
+	el = document.getElementById(ids[i] + "_slider_min");
+	el.innerHTML = probs[probs.length - 1];
+    }
+}
