@@ -32,6 +32,9 @@ There are many moving parts to this, and many need to be installed in different 
 ## Icons
 Put the Icons directory here under Papers.
 
+## Help files
++ Move help.html to the Papers directory.
+
 So we should have
 
 ```

@@ -1,28 +1,31 @@
 # TODO Zoonotics UI
 
+1. Add a way for user to indicate this item is wrong and why.
+   + Maybe just a free form text field with a different submission script.
+   
 1. [check] Sort out the row numbers on the table when we restore the results and then add new ones.
     Need to make them unique. Otherwise can delete the wrong one.
 	+ Should be okay now that we are using unique identifiers.
 
+1. Check restore RowIds from currentResults so we can't add identical rows again to ones from
+    previous session.
+	
 1. [check] Send the contents of the tbody and make the thead for the results table separate.
 
 1. [check] Add RowIds to the results we submit.
 
-1. Add a way for user to indicate this item is wrong and why.
-   + Maybe just a free form text field with a different submission script.
-   
 1. [check] Use current results to build table on load.
    + Now in the html field of the currentResults.
-  
+
 1. toggle the multiple=1 on the other selects when 2 or more items actually selected to avoid
    erroneously generating too many.
    
-1. autocompletion to ensure easy and correct values on new values text items.
+1. [low] autocompletion to ensure easy and correct values on new values text items.
      + See completion.html.
      + jquery
 	 + avoid putting text below button.
 
-1. Undo operations.
+1. [low] Undo operations.
      + Can delete rows.
 
 # Appearance
@@ -65,6 +68,7 @@
 
 
 # Done
+1. [done] Change "undefined" to none again.
 
 1. [fixed] Some rows give uids that give a syntax error when we try to delete by clicking on the garbage
    can.

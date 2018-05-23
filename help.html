@@ -1,29 +1,57 @@
-add TO
-git commit -m "..."
-git push
-
-
-cd
-cd -
-ls
-git clone https://github.com/Jasig/mod_auth_cas.git
-cd mo
-ls
-./confu
-ls
-
-    <body>
+<html>
+<body>
 
 <h1>Help</h1>
 
+<h2>Overview</h2>
 <p>
 This simple interface allows you to identify one or more  combinations
-of the 5 variables from a spillover paper.
-
-The UI provides the terms that we found for a given paper
-for each of the 5 variables of interest.
+of the 5 variables of interest (country, year, virus, species and diagnostic test) from a spillover paper.
+    <p>
+The UI provides the terms that we found and extracted for a given paper
+	for each of these 5 variables.
+<p>	
+You select the combinations of the 5 that should be extracted and added to the database. 	
+    You do this by selecting the items for each variable and the "Add Row" to the table below.
+    <p>
+There may be values we did not extract that we should have.
+You can add these directly in the table at the bottom of the page
+entitled "Values not in results".
+Fill in a value for each variable and then click "Add Row".
+This will get added to the central table of results.
+	<p>
+If you add a row and need to delete it, click on the garbage can on the right of that row.
+<p>	    
+    When you have added all the relevant rows (combinations of variable values),
+    you "Finish &amp; Send Results".  This sends them to us.
+<p>    
+    You can revisit this paper's page and update the results - add or remove rows.
 </p>
 
+
+<h2>The Components of the Page</h2>
+
+<h2>Context</h2>
+You'll need to look at the paper to determine which terms and combinations are pertinent.
+To help you, we show the title and the year for the paper and can toggle displaying the abstract.
+And we also provide a link to the PDF for the entire document.
+(If you want this in a separate window rather than a separate tab, let us know.)
+
+<h3>Abstract</h2>
+<p>
+You can read the abstract directly in the page by clicking on the link named "Abstract".
+And then you can hide it again by clicking on the link again. So you can toggle it at will.    
+
+<h3>The PDF for the Paper</h3>    
+ <p>
+If you want to look at the PDF for the paper to go beyond the abstract, you can click on the link
+at the very top-left of the page.
+If it would be useful, we could add functionality to this interface to show the pages of the PDF within this
+ Web page.   When you selected a value for one of the variables, we could show all the pages and text in which this occurs.
+This may not work for well 
+
+
+<h3>Showing the Possible Values</h3>
 <p>
 There are a lot of possible items for each variable.
 But not all of them are as likely to be relevant.
@@ -45,26 +73,6 @@ This is slightly above and to the left of the collection of 5 individual sliders
 As you move this, it changes all of the values in the individual sliders
 to the same value - <i>except those sliders that you have already changed</i>.
 
-    
-<h2>Context</h2>
-You'll need to look at the paper to determine which terms and combinations are pertinent.
-To help you, we show the title and the year for the paper and can toggle displaying the abstract.
-And we also provide a link to the PDF for the entire document.
-(If you want this in a separate window rather than a separate tab, let us know.)
-
-<h3>Abstract</h2>
-<p>
-You can read the abstract directly in the page by clicking on the link named "Abstract".
-And then you can hide it again by clicking on the link again. So you can toggle it at will.    
-
-<h3>The PDF for the Paper</h3>    
- <p>
-If you want to look at the PDF for the paper to go beyond the abstract, you can click on the link
-at the very top-left of the page.
-If it would be useful, we could add functionality to this interface to show the pages of the PDF within this
- Web page.   When you selected a value for one of the variables, we could show all the pages and text in which this occurs.
-This may not work for well 
-     
 
 <h2>Number of Items and the Probability Ranges</h2>
 You can look at the number of items and the probability/score ranges for the differen
