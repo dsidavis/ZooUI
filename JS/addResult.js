@@ -95,4 +95,14 @@ function addNewResult()
     }
     insertResult(ans, 1, true);
 }
-	
+
+
+
+function showCurResults(vals)
+{
+    console.log('showCurResults: ' + vals);
+    if(vals['html'] && vals['html'] != '') {
+	var k = document.getElementById('resultsTable');
+	k.innerHTML = vals['html'];
+    }
+}

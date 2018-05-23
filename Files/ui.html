@@ -22,7 +22,7 @@
 <!--
    addOptions('year', ModelResults['year'], .7);
  -->
-<body onload="showDocInfo(docInfo);  showProbInfo(ModelResults); showAllOptions(ModelResults, UIConfig.globalThreshold); updateGlobalThreshold(UIConfig.GlobalThreshold, false); addVarTooltips(ModelResults); ">
+<body onload="showDocInfo(docInfo);  showProbInfo(ModelResults); showAllOptions(ModelResults, UIConfig.globalThreshold); updateGlobalThreshold(UIConfig.GlobalThreshold, false); addVarTooltips(ModelResults); showCurResults(currentResults);">
 
 
 <div class="help">
@@ -86,11 +86,13 @@ Threshold: <input id="globalThreshold_slider" type="range" value="90" min=0 max=
     <!--  We can just have a table  and add rows.
 	 Or we can add a spreadsheet widget.
        -->
-    <center>True Results</center>
+<center>True Results</center>
 <center>
+<div id="ResultTableContainer">    
 <table id="resultsTable">
 <tr><th></th><th>Country</th> <th>Year</th> <th>Virus</th><th>Species</th><th>Diagnostic Test</th></tr>
 </table>
+</div>
 <center>
 </div>    
 

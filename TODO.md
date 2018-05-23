@@ -3,11 +3,8 @@
 1. Add a way for user to indicate this item is wrong and why.
 
 1. Avoid adding a row that is already there.
-	
-1. restore the results for the two tables back into the relevant tables.
-   + Only in one table.
 
-1. Use current results to build table on load.
+1. [check] Use current results to build table on load.
    + Now in the html field of the currentResults.
 
 1. Give warning if more than one variable has multiple selections. Currently only using the one
@@ -63,6 +60,9 @@
 
 
 # Done
+
+1. [done] restore the results for the two tables back into the relevant tables.
+   + Already only in one table.
 
 1. [done] Mark the elements in results as to which mechanism they were created with - menu item selection
    or manually entered in table below.
