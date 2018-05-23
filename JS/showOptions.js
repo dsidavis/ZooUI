@@ -92,3 +92,20 @@ function hideOptions(to, options, threshold)
 
     }
 }
+
+
+function unselectAllItems(p)
+{
+    var nodes = p.childNodes;
+    for(var i = 0; i < nodes.length; i++) {
+	nodes[i].selected = false;
+    }
+}
+
+function clearSelections()
+{
+    for(var i = 0; i < VarNames.length; i++) {
+	var p = document.getElementById(VarNames[i] + "_options");
+	unselectAllItems(p);
+    }
+}
