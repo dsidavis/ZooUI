@@ -44,7 +44,7 @@ function addVarTooltips(data)
 	el.innerHTML = probs[probs.length - 1];
 
 	el = document.getElementById(ids[i] + "_slider");
-	el.max = probs[0]*100;		
-	el.min = probs[probs.length - 1]*100;
+	el.max = min(100, probs[0]*100 + 1);		
+	el.min = max(0, probs[probs.length - 1]*100 - 1);
     }
 }
