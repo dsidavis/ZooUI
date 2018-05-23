@@ -50,10 +50,6 @@ function insertResult(vals, n, manual)
 	if(manual)
            tr.className = "manual";
 
-	var td = document.createElement("td");	
-	td.innerHTML = '<img src="../Icons/trashCan.jpg" width=32 height=32 onclick=deleteRow("' +  tr.id + '")></img>';
-	tr.appendChild(td);
-
 	var uid = "";
 	for(var i = 0; i < VarNames.length; i++) {
 	    var v = VarNames[i];
@@ -66,8 +62,15 @@ function insertResult(vals, n, manual)
 //   console.log(v +  " => " + pos + " " + vals[v][pos] + " : " + vals[v]);
 	    tr.appendChild(td);
 	}
-	console.log("adding row " + uid + " to existing " +  RowIds)	;
+
+	uid = uid.replace(' ', '_');
+//	console.log("adding row " + uid + " to existing " +  RowIds)	;
 	if(!(RowIds[uid])) {
+
+	    var td = document.createElement("td");	
+	    td.innerHTML = '<img src="../Icons/trashCan.jpg" width=32 height=32 onclick=deleteRow("' +  uid + '")></img>';
+	    tr.appendChild(td);
+	    
 	    tr.id = uid;
 	    table.appendChild(tr);
 	    RowIds[uid] = true;
@@ -99,6 +102,7 @@ function deleteRow(id)
 {
     var obj = document.getElementById(id);
     obj.parentNode.removeChild(obj);
+    RowIds[id] = false;
 }
 
 
