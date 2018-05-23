@@ -21,7 +21,6 @@
 1. Undo operations.
      + Can delete rows.
 
-
 # Appearance
 
 1. Make the menu selection items bigger.
@@ -34,15 +33,20 @@
 
 # CGI/Submission
 
-+ [ok] Put the name of the directory/paper into the html/js file so can use for submission.
-   + not needed as we get this in the CGI script via the HTTP_REFERER variable.
-   + It is the docInfo variable in data.js.
-
 + Link to next PDF
+
++ Setup apache server with CGI permissions.
 
 + Use CAS login
 
+
 + Create the dummy currentResults.js for each directory.
+  + Code is on dsi machine as an R script.
+  
++ [ok] Put the name of the directory/paper into the html/js file so can use for submission.
+   + Isn't it in the docInfo? Maybe not the directory.
+   + not needed as we get this in the CGI script via the HTTP_REFERER variable.
+  
 
 # R
 
