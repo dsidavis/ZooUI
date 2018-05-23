@@ -30,6 +30,7 @@ function addOptions(to, options, threshold)
 	var opt = new Option(); //document.createElement("option");
 	opt.value = options['values'][i];
 	opt.innerHTML = options['values'][i];
+	opt.title = options['section'][i];
 //	console.log("adding " + opt.innerHTML);	
 	sel.appendChild(opt);
     }
