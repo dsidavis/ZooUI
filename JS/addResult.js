@@ -75,7 +75,7 @@ function insertResult(vals, n, manual, primaryIndex = 0)
 	    if(i == primaryIndex)
 		pos = min(j, vals[v].length - 1);
 	    else
-		pos = 0;
+		pos = vals[v].length > 0 ? 0 : -1;
 	    
 	    td = document.createElement("td");
 	    var val = pos > -1 ? vals[v][pos] : "(none)"
