@@ -2,7 +2,8 @@ hr.divider {
   height: 4px;    
   //  padding: 20px;
   background-color: red;
-  border-color: red;  
+  border-color: red;
+  clear: both;
 }    
 
 
@@ -20,4 +21,8 @@ div.help {
 
 tr.manual {
     background-color: lightgrey;
+}
+
+input.button {
+    background-color: orange;
 }

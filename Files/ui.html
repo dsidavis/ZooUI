@@ -57,6 +57,9 @@ Threshold: <input id="globalThreshold_slider" type="range" value="90" min=0 max=
 
 
 <div class="sliders">
+<div style="float:right;">    
+    <input type="button" value="Add Row" class="button" onclick="addResult()"></input>
+</div>    
     <table border=1 align="center">
 	<tr><th id="Country_th">Country</th> <th id="Year_th">Year</th> <th id="Virus_th">Virus</th> <th id="Species_th">Species</th> <th id="DiagnosticTest_th">Diagnostic Test</th>
 	<tr>
@@ -74,9 +77,8 @@ Threshold: <input id="globalThreshold_slider" type="range" value="90" min=0 max=
 	    <td><div class=""><select id="diagTest_options" multiple=1></select></div></td>	    
 	</th>	    
     </table>
-<div class="SelectinButtons">
+<div class="SelectionButtons">
 <center>    
-<input type="button" value="Add Row" onclick="addResult()"></input>    
 <input type="button" onclick="clearSelections()" value="Clear Selections"></input>        
 </center>
 </div>
@@ -85,7 +87,6 @@ Threshold: <input id="globalThreshold_slider" type="range" value="90" min=0 max=
 <hr width="50%" class="divider"/>
 
 
-<input type="button" value="Finish &amp; Send Results" onclick="console.log('submitting ' + JSON.stringify(getRowIds())); SubmitResults(getResults(), getHTMLResults(), getRowIds(), makeURL());">
 
 <div class="results">
     <!--  We can just have a table  and add rows.
@@ -103,11 +104,15 @@ Threshold: <input id="globalThreshold_slider" type="range" value="90" min=0 max=
 </table>
 </div>
 <center>
+<div style="float:right;">     
+  <input type="button" class="button" value="Finish &amp; Send Results" onclick="console.log('submitting ' + JSON.stringify(getRowIds())); SubmitResults(getResults(), getHTMLResults(), getRowIds(), makeURL());">
+</div>
 </div>    
 
 
-<hr width="50%" class="divider"/>
+<hr width="50%" class="divider" />
 <h2>Values not in results</h2>
+<h3>Manually entered results</h2>
 <table id="resultsTable2">
 <tr><th></th><th>Country</th> <th>Year</th> <th>Virus</th> <th>Species</th> <th>Diagnostic Test</th>	</tr>
 
@@ -115,15 +120,15 @@ Threshold: <input id="globalThreshold_slider" type="range" value="90" min=0 max=
     <td></td>
  <!-- For autocompletion     <td><div class="ui-widget"> <input id="tags" ></input></div></td>
     -->
-    
 <td><input id="new_country" type="text" value="A"></input></td>
 <td><input id="new_year" type="text" value="B"></input></td>
 <td><input id="new_virus" type="text" value="C"></input></td>
 <td><input id="new_species" type="text" value="D"></input></td>    
 <td><input id="new_diagTest" type="text" value="E"></input></td>
+<td><input type="button" class="button" value="Add to Table" onclick="addNewResult()"></td>
 </tr>    
 </table>	
-<input type="button" value="Add" onclick="addNewResult()">
+
 
 </body>	
 </html>    
