@@ -112,6 +112,8 @@ function insertResult(vals, n, manual, primaryIndex = 0)
 	    tr.id = uid;
 	    table.appendChild(tr);
 	    RowIds[uid] = true;
+	} else {
+	    window.status = "This row is already in the table";
 	}
     }
 }
