@@ -1,5 +1,5 @@
 # TODO Zoonotics UI
-
+	
 1. Add a way for user to indicate this item is wrong and why.
    + Maybe just a free form text field with a different submission script.
    
@@ -9,10 +9,6 @@
 
 1. Check restore RowIds from currentResults so we can't add identical rows again to ones from
     previous session.
-	
-1. [check] Send the contents of the tbody and make the thead for the results table separate.
-
-1. [check] Add RowIds to the results we submit.
 
 1. [check] Use current results to build table on load.
    + Now in the html field of the currentResults.
@@ -68,6 +64,15 @@
 
 
 # Done
+
+1. [check] Send the contents of the tbody and make the thead for the results table separate.
+
+1. [check] Add RowIds to the results we submit.
+    + Not working!
+
+1. [done] No rows to submit. See why?
+    + Problem with changing to tbody in getResults() code that needed to be updated.
+	
 1. [done] Change "undefined" to none again.
 
 1. [fixed] Some rows give uids that give a syntax error when we try to delete by clicking on the garbage

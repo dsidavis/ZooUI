@@ -26,9 +26,10 @@ function addResult()
 	sels[v] = tmp;
     }
 
-    if(numMultiSelect > 1)
+    if(numMultiSelect > 1) {
 	alert(numMultiSelect + " variables had multiple selected items ("+ msg + "). Only using the multiple values from " + VarNames[idx] + " and the first selected value from the others.");
-
+    }
+    
     console.log("primary variable: " + idx + " " + VarNames[idx]);
     insertResult(sels, n, false, idx);
 }
@@ -49,6 +50,10 @@ var RowNum = 1;
 
 var RowIds = {};
 
+function getRowIds() {
+    return(RowIds);
+}
+
 function insertResult(vals, n, manual, primaryIndex = 0)
 {
     var table = document.getElementById("resultsTable");
@@ -62,8 +67,6 @@ function insertResult(vals, n, manual, primaryIndex = 0)
 //  console.log("creating " + n + " <tr>s with " + VarNames.length + " columns");
     for(var j = 0; j < n ; j++) {
 	var tr = document.createElement("tr"), td;
-	tr.id = "RowNum_" + RowNum;
-	RowNum = RowNum + 1;
 	if(manual)
            tr.className = "manual";
 

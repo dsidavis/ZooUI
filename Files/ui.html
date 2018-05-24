@@ -22,7 +22,7 @@
 <!--
    addOptions('year', ModelResults['year'], .7);
  -->
-<body onload="showDocInfo(docInfo);  showProbInfo(ModelResults); showAllOptions(ModelResults, UIConfig.globalThreshold); updateGlobalThreshold(UIConfig.GlobalThreshold, false); addVarTooltips(ModelResults); showCurResults(currentResults); RowIds = currentResults['rowIds'];">
+<body onload="showDocInfo(docInfo);  showProbInfo(ModelResults); showAllOptions(ModelResults, UIConfig.globalThreshold); updateGlobalThreshold(UIConfig.GlobalThreshold, false); addVarTooltips(ModelResults); showCurResults(currentResults); xxRowIds = currentResults['rowIds'];">
 
 
 <div class="help">
@@ -85,7 +85,7 @@ Threshold: <input id="globalThreshold_slider" type="range" value="90" min=0 max=
 <hr width="50%" class="divider"/>
 
 
-<input type="button" value="Finish &amp; Send Results" onclick="console.log(JSON.stringify(getResults())); SubmitResults(getResults(), getHTMLResults(), RowIds, makeURL());">
+<input type="button" value="Finish &amp; Send Results" onclick="console.log('submitting ' + JSON.stringify(getRowIds())); SubmitResults(getResults(), getHTMLResults(), getRowIds(), makeURL());">
 
 <div class="results">
     <!--  We can just have a table  and add rows.
