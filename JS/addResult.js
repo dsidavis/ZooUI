@@ -54,6 +54,10 @@ function getRowIds() {
     return(RowIds);
 }
 
+function setRowIds(ids) {
+    RowIds = ids;
+}
+
 function insertResult(vals, n, manual, primaryIndex = 0)
 {
     var table = document.getElementById("resultsTable");
