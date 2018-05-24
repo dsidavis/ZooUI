@@ -26,3 +26,11 @@ tr.manual {
 input.button {
     background-color: orange;
 }
+
+input#clearSelection {
+    background-color: cyan;
+}
+
+select {
+    overflow-y: scroll;
+}

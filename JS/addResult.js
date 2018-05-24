@@ -26,6 +26,11 @@ function addResult()
 	sels[v] = tmp;
     }
 
+    if(n <=0 ) {
+	alert("You have no selections in any of the variables. Cannot add a row.");
+	return(false);
+    }
+
     if(numMultiSelect > 1) {
 	alert(numMultiSelect + " variables had multiple selected items ("+ msg + "). Only using the multiple values from " + VarNames[idx] + " and the first selected value from the others.");
     }

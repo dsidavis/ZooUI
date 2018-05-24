@@ -70,16 +70,16 @@ Threshold: <input id="globalThreshold_slider" type="range" value="90" min=0 max=
 	    <td><div class="slider diagTest"><i id="diagTest_slider_min"></i><input id="diagTest_slider" type="range" min="" max="100" onchange="updateThreshold(true, 'diagTest', event.currentTarget.value/100)"><i id="diagTest_slider_max"></i></div></td>
 	</tr>
 	<tr>
-	    <td><div class=""><select id="country_options" multiple=1></select></div></td>
-	    <td><div class=""><select id="year_options" multiple=1></select></div></td>
-	    <td><div class=""><select id="virus_options" multiple=1></select></div></td>
-	    <td><div class=""><select id="species_options" multiple=1></select></div></td>
-	    <td><div class=""><select id="diagTest_options" multiple=1></select></div></td>	    
+	    <td><div class=""><select size=10 id="country_options" multiple=1></select></div></td>
+	    <td><div class=""><select size=10 id="year_options" multiple=1></select></div></td>
+	    <td><div class=""><select size=10 id="virus_options" multiple=1></select></div></td>
+	    <td><div class=""><select size=10 id="species_options" multiple=1></select></div></td>
+	    <td><div class=""><select size=10 id="diagTest_options" multiple=1></select></div></td>	    
 	</th>	    
     </table>
 <div class="SelectionButtons">
 <center>    
-<input type="button" onclick="clearSelections()" value="Clear Selections"></input>        
+<input type="button" id="clearSelection" onclick="clearSelections()" value="Clear Selections"></input>        
 </center>
 </div>
 </div>	

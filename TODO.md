@@ -3,15 +3,7 @@
 1. Add a way for user to indicate this item is wrong and why.
    + Maybe just a free form text field with a different submission script.
    
-1. [check] Sort out the row numbers on the table when we restore the results and then add new ones.
-    Need to make them unique. Otherwise can delete the wrong one.
-	+ Should be okay now that we are using unique identifiers.
-
-1. Check restore RowIds from currentResults so we can't add identical rows again to ones from
-    previous session.
-
-1. [check] Use current results to build table on load.
-   + Now in the html field of the currentResults.
+1. ? Do we need to add an alert() when adding an existing row.
 
 1. toggle the multiple=1 on the other selects when 2 or more items actually selected to avoid
    erroneously generating too many.
@@ -64,6 +56,16 @@
 
 
 # Done
+
+1. [done] Sort out the row numbers on the table when we restore the results and then add new ones.
+    Need to make them unique. Otherwise can delete the wrong one.
+	+ Should be okay now that we are using unique identifiers.
+
+1. [done] Check restore RowIds from currentResults so we can't add identical rows again to ones from
+    previous session.
+
+1. [done] Use current results to build table on load.
+   + Now in the html field of the currentResults.
 
 1. [check] Send the contents of the tbody and make the thead for the results table separate.
 
