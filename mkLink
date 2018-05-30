@@ -1,0 +1,5 @@
+#!/bin/bash
+
+for d in `find . -type d -maxdepth 1` ; do
+ (cd $d ; ln -s ../ui.html . ; ln -s ui.html index.html )
+done
