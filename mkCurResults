@@ -1,0 +1,12 @@
+#!/bin/sh
+
+STUB=empty_results.js
+
+if $# gt 1 ; then
+    STUB=$1
+fi   
+
+for d in `find . -type d -and -maxdepth 1 ` ; do
+  echo $d
+  cp $STUB $d
+fi
