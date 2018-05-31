@@ -1,4 +1,20 @@
 # TODO Zoonotics UI
+
+# Deployment on dsi.library.ucdavis.edu
+
+1. Symbolic link for ui.html.
+
+1. submit.cgi
+
+1. CAS
+
+1. To deploy
+   1. On dsi, tar zcf ZooUI_files.tar.gz -C /data_small/Zoonotics/ZooUI_files
+   1. scp this to dsi.library.ucdavis.edu
+   1. On laptop/local machine, in UI/, run make to create ship.tar.gz
+   1. scp ship.tar.gz to dsi.library.ucdavis.edu.
+
+#
 	
 1. Add a way for user to indicate this item is wrong and why.
    + Maybe just a free form text field with a different submission script.
