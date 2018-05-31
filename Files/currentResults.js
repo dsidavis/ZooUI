@@ -1,1 +1,6 @@
-var currentResults = {};
+var currentResults = {
+ results: [],
+ html: "",
+ rowIds: {}
+};
+
