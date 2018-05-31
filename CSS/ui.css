@@ -24,11 +24,11 @@ tr.manual {
 }
 
 input.button {
-    background-color: orange;
+    background-color: lightgray;
 }
 
 input#clearSelection {
-    background-color: cyan;
+    background-color: #ccd9ff;
 }
 
 select {
