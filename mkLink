@@ -1,5 +1,5 @@
 #!/bin/bash
 
-for d in `find . -type d -maxdepth 1` ; do
- (cd $d ; ln -s ../ui.html . ; ln -s ui.html index.html )
+for d in `find . -maxdepth 1 -type d` ; do
+ (cd $d ; if ! test -e ui.html ; then ln -s ../ui.html . ; ln -s ui.html index.html ; fi)
 done
