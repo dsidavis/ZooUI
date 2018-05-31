@@ -24,15 +24,21 @@ Rscript -e 'source("mkCurResults.R"); mkCurResults()'
 cp CGI/submit.cgi $HTML/cgi-bin/Spillover/
 chmod a+x $HTML/cgi-bin/Spillover/submit.cgi
 
-if ! test -d .git ; then
-  git init
-fi
+#if ! test -d .git ; then
+#  git init
+#fi
+
+set +e
 
 cd ..
-chgrp -R www ZooUI_files
-chmod -R g+ws ZooUI_files
+chgrp -R www ZooUI_files 2> /dev/null
+chmod -R g+ws ZooUI_files 2> /dev/null
 
 
+# Create the git repository separately and change
+# cd ZooUI_files
+# git init
+# chgrp -R apache.apache .git
 
 
 
