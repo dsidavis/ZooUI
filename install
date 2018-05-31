@@ -1,0 +1,39 @@
+#!/bin/bash -x -e
+
+HTML=/var/www
+
+cd $HTML/html
+#!! Better not have currentResults.js in here!
+tar zxf $HOME/ZooUI_files.tar.gz
+
+if ! test  -d ZooUI_files ; then
+  echo "Failed to create ZooUI_files when untarring ZooUI_files.tar.gz"
+  exit 1
+fi
+
+
+cd ZooUI_files
+tar zxf $HOME/ship.tar.gz
+
+cp Files/ui.html .
+
+./mkLink
+#./mkCurResults
+Rscript -e 'source("mkCurResults.R"); mkCurResults()'
+
+cp CGI/submit.cgi $HTML/cgi-bin/Spillover/
+chmod a+x $HTML/cgi-bin/Spillover/submit.cgi
+
+if ! test -d .git ; then
+  git init
+fi
+
+cd ..
+chgrp -R www ZooUI_files
+chmod -R g+ws ZooUI_files
+
+
+
+
+
+
