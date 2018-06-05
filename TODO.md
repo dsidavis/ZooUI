@@ -1,5 +1,25 @@
 # TODO Zoonotics UI
 
+# Bugs and misc - 5 June
+
+1. "Values not in results" forces manual entry for entire row.
+   If possible, it would be nicer to be able to enter just a single data item,
+   and use selections above for remainder of data.
+   
+   Even better would be to add an option to the list of potential matches.
+   
+1. [FIXED] @MATT Some PDFs have no data
+   1. Hutchinson-2000
+   1. Plyusnina-2012 
+   1. Liu-2013 
+   
+1. Have duplicate PDF files in index, e.g., 
+   1. Blitvich-2012
+   1. Chinikar-2010 
+   1. Champour-2016 
+   1. Mostafavi-2013 
+   1. Serra-Cobo-2002 
+   
 # Deployment on dsi.library.ucdavis.edu
 
 1. Symbolic link for ui.html.
