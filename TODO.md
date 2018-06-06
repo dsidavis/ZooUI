@@ -8,6 +8,8 @@
    
    Even better would be to add an option to the list of potential matches.
    
+   @mespe:  This seems like luxury/not needed immediately item. Agree?
+   
 1. [FIXED] @MATT Some PDFs have no data
    1. Hutchinson-2000
    1. Plyusnina-2012 
@@ -19,6 +21,8 @@
    1. Champour-2016 
    1. Mostafavi-2013 
    1. Serra-Cobo-2002 
+   
+   @mespe: Is this for you to fix?
    
 # Deployment on dsi.library.ucdavis.edu
 
