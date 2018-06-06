@@ -9,6 +9,8 @@ ship.tar.gz: $(FILES)
 # to point to dsi.ucdavis.edu and dsi.library.ucdavis.edu
 # dsilib is the Web server; dsi is the compute server.
 
+#.PHONY:	ZooUI_files.tar.gz
+
 ZooUI_files.tar.gz:
 	ssh dsi 'tar zcf ZooUI_files.tar.gz -C /data_small/Zoonotics ZooUI_files'
 	scp dsi:ZooUI_files.tar.gz .

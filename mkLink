@@ -1,5 +1,5 @@
 #!/bin/bash
 
-for d in `find . -maxdepth 1 -type d` ; do
- (cd $d ; if ! test -e ui.html ; then ln -s ../ui.html . ; ln -s ui.html index.html ; fi)
+for d in `find . -maxdepth 1 -type d -and -not -name .git` ; do
+ (cd $d ; if ! test -e index.html ; then ln -s ../ui.html index.html ; fi)
 done
