@@ -64,6 +64,28 @@ function addNewOptions(to, options, threshold)
     }
 }
 
+function insertOption(to, term)
+{
+    var sel = document.getElementById(to + "_options");
+    var opt = new Option(); //document.createElement("option");
+    opt.value = term;
+    opt.innerHTML = term;
+    sel.insertBefore(opt, sel.firstChild); 
+}
+
+
+function deleteOption(to, term)
+{
+    var sel = document.getElementById(to + "_options");
+    var k = sel.children;
+    for (var i = 0; i < k.length;  i++) {
+	if(k[i].innerHTML == term) {
+	    sel.removeChild(k[i]);
+	    return(true);
+	}
+    }
+    return(false);
+}
 
 // threshold is an array with 2 elements
 //  and the first is < second

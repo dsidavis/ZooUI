@@ -8,6 +8,7 @@
     <script type="text/javascript" src="../JS/addResult.js">	</script>
     <script type="text/javascript" src="../JS/getResults.js">	</script>
     <script type="text/javascript" src="../JS/submit.js">	</script>
+    <script type="text/javascript" src="../JS/manageTerms.js">	</script>    
     <script type="text/javascript" src="../JS/config.js">	</script>        
     
     <script type="text/javascript" src="data.js" charset="UTF-8"></script>
@@ -75,7 +76,14 @@ Threshold: <input id="globalThreshold_slider" type="range" value="90" min=0 max=
 	    <td><div class=""><select size=10 id="virus_options" multiple=1></select></div></td>
 	    <td><div class=""><select size=10 id="species_options" multiple=1></select></div></td>
 	    <td><div class=""><select size=10 id="diagTest_options" multiple=1></select></div></td>	    
-	</th>	    
+	</tr>	    
+	<tr>
+	    <td><a href="javascript:addTerm('country')">add</a><input type="text" id="countryTerm"></input><a href="javascript:deleteTerm('country')">del</a></td>
+	    <td><a href="javascript:addTerm('year')">add</a><input type="text" id="yearTerm"></input><a href="javascript:deleteTerm('year')">del</a></td>
+	    <td><a href="javascript:addTerm('virus')">add</a><input type="text" id="virusTerm"></input><a href="javascript:deleteTerm('virus')">del</a></td>
+	    <td><a href="javascript:addTerm('species')">add</a><input type="text" id="speciesTerm"></input><a href="javascript:deleteTerm('species')">del</a></td>
+	    <td><a href="javascript:addTerm('diagTest')">add</a><input type="text" id="diagTestTerm"></input><a href="javascript:deleteTerm('diagTest')">del</a></td>
+	</tr>
     </table>
     </th><th>
 <div style="float:left;">    
