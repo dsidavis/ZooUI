@@ -3,7 +3,7 @@ echo "Content-type: text/html";
 echo "";
 
 
-DIR=`echo $HTTP_REFERER | sed -e 's|/ui.html$||'  | sed -e 's|.*/||' `
+DIR=`echo $HTTP_REFERER | sed -e 's|/index.html$||'  | sed -e 's|.*/||' `
 
 BASE_DIR=/var/www/html/ZooUI_files
 OUT=${DIR}.out
