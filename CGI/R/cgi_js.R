@@ -45,6 +45,7 @@ function(txt)
 mergeNewTerms =
 function(to, from)
 {
+    from = from[ from != '(none)']
     w = !(from %in% to$values)
     if(any(w)) {
         to$values = c(from[w], to$values)
@@ -59,9 +60,9 @@ function(to, from)
 writeJS =
 function(els, file = character())
 {
-    v = sprintf( "var %s = %s;", names(els), sapply(els, function(x) paste(toJSON(x), collapse = "\n")))
+    v = sprintf( "var %s = %s;", names(els), sapply(els, function(x) paste(toJSON(x, container = TRUE, asIs = TRUE), collapse = "\n")))
     if(length(file))
-       cat(v, file = file, sep = "\n\n")
+       cat(v, file = file, sep = "\n")
     v
 }
 
