@@ -11,9 +11,9 @@ function(dir)
     doc = htmlParse(I(xx))
     tt = readHTMLTable(doc, "//table", which = 1, stringsAsFactors = FALSE)
     tt = tt[-length(tt)] # the garbage can column
-    colnames(tt) = names(orig$ModelResults)
+    colnames(tt) =  c("country", "year", "virus", "species", "diagTest")
 
-    orig$ModelResults = mapply( mergeNewTerms, orig$ModelResults, tt, SIMPLIFY = FALSE)
+    orig$ModelResults = mapply( mergeNewTerms, orig$ModelResults, tt[names(orig$ModelResults)], SIMPLIFY = FALSE)
     writeJS(orig, file.path(dir, 'data.js'))
 }
 
