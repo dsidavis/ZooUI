@@ -22,6 +22,7 @@ cp Files/ui.html .
 Rscript -e 'source("mkCurResults.R"); mkCurResults()'
 
 cp CGI/submit.cgi $HTML/cgi-bin/Spillover/
+cp -R CGI/R $HTML/cgi-bin/Spillover
 chmod a+x $HTML/cgi-bin/Spillover/submit.cgi
 
 #if ! test -d .git ; then
