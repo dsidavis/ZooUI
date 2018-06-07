@@ -1,4 +1,4 @@
-FILES=JS CGI CSS Icons help.html mkCurResults mkCurResults.R Files/ui.html Files/data.js Files/currentResults.js mkLink install  empty_results.js
+FILES=JS CGI CSS Icons help.html mkCurResults mkCurResults.R Files/ui.html Files/data.js Files/currentResults.js mkLink install  empty_results.js CGI/R/cgi_js.R
 
 
 ship.tar.gz: $(FILES)
