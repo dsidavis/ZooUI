@@ -14,13 +14,16 @@ ship.tar.gz: $(FILES)
 ZooUI_files.tar.gz:
 	ssh dsi 'tar zcf ZooUI_files.tar.gz -C /data_small/Zoonotics ZooUI_files'
 	scp dsi:ZooUI_files.tar.gz .
+	
+sendShip: ship.tar.gz
+	rsync $^ dsilib:
 
 send: ZooUI_files.tar.gz ship.tar.gz
 	rsync $^ dsilib:
 
 .PHONY:	 Install
 
-Install: 
+Install: sendShip
 	scp install dsilib:
 	ssh dsilib 'sh -x -e ./install'
 
