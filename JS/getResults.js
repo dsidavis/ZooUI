@@ -57,6 +57,9 @@ function restoreBasicReproductiveNumber(value)
 
 function restoreResults(results)
 {
-    restoreAllNotes(results['results']['notes']);
-    restoreBasicReproductiveNumber(results['results']['basicReproductiveNumber']);
+    if(results['version'] && results['version'] > 1) {
+	console.log('restoring from version 2');
+	restoreAllNotes(results['results']['notes']);
+	restoreBasicReproductiveNumber(results['results']['basicReproductiveNumber']);
+    }
 }

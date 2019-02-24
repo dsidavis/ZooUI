@@ -39,7 +39,8 @@ function SubmitResults(data, html, rowIds, URL)
     var json = JSON.stringify({
 	                results: data,
 	                html: html,
-                        rowIds: rowIds});
+                        rowIds: rowIds,
+              	        version: 2});
     if(Testing) {
 	console.log(json);
     } else
