@@ -1,5 +1,46 @@
 # TODO Zoonotics UI
 
+# New columns
+
+1. With new structure for results (including the notes and reproductive number presence)
+   we have to restore appropriately. See ui.html and references to the variable currentResults.
+   
+1. Collect the settings on the sliders ?
+   + And restore them.
+
+1. [done] Restore results correctly
+   + restoreNotes()
+   + restoreBasicReproductiveNumber()
+   + restoreAllNotes()
+   + then the original rows data
+
+1. [done] Submit any feedback notes
+   1. getNotes()
+   1. Restore them also. - see restoreNotes()
+
+1. [done] Collect and submit the information from the new columns to the True Results table
+   + [done] For  the primary table and 
+   + [done] the Manually entered results.
+
+1. Align the add and del links in each column given the extra columns.
+
+1. ?For manually entered results, add the numerator/denominator as separate fields or just leave as a
+   text field?
+
+1. [done] When we add a row, do we reset the prevalence, deaths, morbidity, and reservoir?
+    + [done] No - should use Clear Selections to clear these and add the new columns to the things to clear.
+
+1. [low] For numerator and denominator, if user enters / in the value, take this and separate
+   it and put into the numerator and denominator.
+   
+1. [low] Check numerator smaller than denominator.
+
+1. [done] add the per-paper notes and option (for Basic Reproductive Number).
+   1. For  notes, allow for separate notes via a + "button"
+  
+1. [done] add a Clear button for manually entered results
+
+
 # Bugs and misc - 5 June
 
 1. "Values not in results" forces manual entry for entire row.

@@ -12,6 +12,20 @@ function addResult()
 	var v = VarNames[i];
 	var sel = document.getElementById(v + "_options");
 
+	if(sel == null) {
+
+	    sel_n = document.getElementById(v + "_numerator");
+	    var val = sel_n.value;
+	    if(! val.includes('/') ) {
+		sel_d = document.getElementById(v + "_denominator");
+		val = sel_n.value + "/" + sel_d.value;
+	    }
+	    sels[v] = val;
+	    console.log("variable " + v + " " + sels[v]);	    
+	    continue;
+	}
+	
+
 	var tmp = getSelectedElements(sel);
 	
 	if(tmp.length >= n && tmp.length > 1) {
@@ -86,18 +100,26 @@ function insertResult(vals, n, manual, primaryIndex = 0)
 	    var pos;
 	    if(i == primaryIndex)
 		pos = min(j, vals[v].length - 1);
-	    else
+	    else 
 		pos = vals[v].length > 0 ? 0 : -1;
 	    
+	    var val = pos > -1 ? vals[v][pos] : "(none)";
+	    if (typeof vals[v]  == "string") {  // typeof(s) === 'string' || s instanceof String;
+		// console.log("For " + v + " we have a string " + vals[v]);
+		val = vals[v];
+            }
+	    
 	    td = document.createElement("td");
-	    var val = pos > -1 ? vals[v][pos] : "(none)"
 
 	    uid = uid + "!!!" + val;
 	    td.innerHTML = val;
-//   console.log(v +  " => " + pos + " " + vals[v][pos] + " : " + vals[v]);
+//   console.log(v +  " => " + pos + " " + vals[v][pos] + " : " + vals[v] + "   val = " + val + "> " + td.innerHTML);
 	    tr.appendChild(td);
 	}
 
+
+
+	
 //	uid = uid.replace(' ', '_');
 //	uid = uid.replace('and', '\&');
 //	uid = uid.replace('or', '');
@@ -175,5 +197,15 @@ function showCurResults(vals)
     if(vals['html'] && vals['html'] != '') {
 	var k = document.getElementById('resultsTable');
 	k.innerHTML = vals['html'];
+    }
+}
+
+
+function clearNewEntries()
+{
+    var i;
+    for(i = 0; i < VarNames.length; i++) {
+	var el = document.getElementById("new_" + VarNames[i]);
+	el.value = "";
     }
 }

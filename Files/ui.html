@@ -9,7 +9,8 @@
     <script type="text/javascript" src="../JS/getResults.js">	</script>
     <script type="text/javascript" src="../JS/submit.js">	</script>
     <script type="text/javascript" src="../JS/manageTerms.js">	</script>    
-    <script type="text/javascript" src="../JS/config.js">	</script>        
+    <script type="text/javascript" src="../JS/notes.js">	</script>            
+    <script type="text/javascript" src="../JS/config.js">	</script>
     
     <script type="text/javascript" src="data.js" charset="UTF-8"></script>
     <script type="text/javascript" src="currentResults.js" charset="UTF-8"></script>    
@@ -23,7 +24,7 @@
 <!--
    addOptions('year', ModelResults['year'], .7);
  -->
-<body onload="showDocInfo(docInfo);  showProbInfo(ModelResults); showAllOptions(ModelResults, UIConfig.globalThreshold); updateGlobalThreshold(UIConfig.GlobalThreshold, false); addVarTooltips(ModelResults); showCurResults(currentResults); setRowIds(currentResults['rowIds']);">
+<body onload="showDocInfo(docInfo);  showProbInfo(ModelResults); showAllOptions(ModelResults, UIConfig.globalThreshold); updateGlobalThreshold(UIConfig.GlobalThreshold, false); addVarTooltips(ModelResults); showCurResults(currentResults); setRowIds(currentResults['rowIds']); restoreResults(currentResults);">
 
 
 <div class="help">
@@ -50,6 +51,14 @@
 
 <div style="clear: both;"></div>
 
+
+Basic Reproductive Number (R<sub>0</sub>) reported?
+<select id="ReproductiveNumber">
+<option value=""></option>    	    
+<option value="NO">No</option>    	
+<option value="YES">Yes</option>    	
+</select>    
+
 <hr width="50%" class="divider"/>
 
 <div class="globalThreshold">
@@ -63,7 +72,12 @@ Threshold: <input id="globalThreshold_slider" type="range" value="90" min=0 max=
 <tr valign="top"><th>	    
     <table border=1 align="center">
 	<tr><th id="Country_th">Country</th> <th id="Year_th">Year</th> <th id="Virus_th">Virus</th> <th id="Species_th">Species</th> <th id="DiagnosticTest_th">Diagnostic Test</th>
-	<tr>
+	    <th>Prevalence</th>
+	    <th>Deaths</th>
+	    <th>Morbidity</th>
+	    <th>Reservoir</th>	    
+        </tr>
+	    <tr>
 	    <td><div class="slider country"><i id="country_slider_min"></i><input id="country_slider" type="range" min="" max="100" onchange="updateThreshold(true, 'country', event.currentTarget.value/100)"><i id="country_slider_max"></i></div></td>
 	    <td><div class="slider year"><i id="year_slider_min"></i><input id="year_slider" type="range" min="" max="100" onchange="updateThreshold(true, 'year', event.currentTarget.value/100)"><i id="year_slider_max"></i></div></td>
 	    <td><div class="slider virus"><i id="virus_slider_min"></i><input id="virus_slider" type="range" min="" max="100" onchange="updateThreshold(true, 'virus', event.currentTarget.value/100)"><i id="virus_slider_max"></i></div></td>
@@ -76,6 +90,36 @@ Threshold: <input id="globalThreshold_slider" type="range" value="90" min=0 max=
 	    <td><div class=""><select size=10 id="virus_options" multiple=1></select></div></td>
 	    <td><div class=""><select size=10 id="species_options" multiple=1></select></div></td>
 	    <td><div class=""><select size=10 id="diagTest_options" multiple=1></select></div></td>	    
+
+	    <th>
+		<table>
+                  <tr><th>Numerator<th><th><input class="numerator" id="Prevalence_numerator" type="text"></input><th></tr>
+		  <tr><th>Denominator<th><th><input class="denominator" id="Prevalence_denominator"  type="text"></input><th></tr>			
+		</table>
+  		  </th>
+
+	    <th>
+		<table>
+                  <tr><th>Numerator<th><th><input class="numerator" id="Deaths_numerator" type="text"></input><th></tr>
+		  <tr><th>Denominator<th><th><input class="denominator" id="Deaths_denominator"  type="text"></input><th></tr>			
+		</table>
+  		  </th>
+
+	    <th>
+		<table>
+                  <tr><th>Numerator<th><th><input class="numerator" id="Morbidity_numerator" type="text"></input><th></tr>
+		  <tr><th>Denominator<th><th><input class="denominator" id="Morbidity_denominator"  type="text"></input><th></tr>			
+		</table>
+  	    </th>		  
+
+	    <th>
+		<select id="Reservoir_options">
+    		    <option name="" value="NA"></option>		    
+    		    <option name="Yes" value="Yes">Yes</option>
+    		    <option name="No" value="No">No</option>
+		    <option name="Maybe" value="Maybe">Maybe</option>
+	       </select>
+   	    </th>
 	</tr>	    
 	<tr>
 	    <td><a href="javascript:addTerm('country')">add</a><input type="text" id="countryTerm"></input><a href="javascript:deleteTerm('country')">del</a></td>
@@ -113,7 +157,7 @@ Threshold: <input id="globalThreshold_slider" type="range" value="90" min=0 max=
 <div id="ResultTableContainer">
 <table>
 <thead>	
-    <tr><th>Country</th> <th>Year</th> <th>Virus</th><th>Species</th><th>Diagnostic Test</th><th></th>
+    <tr><th>Country</th> <th>Year</th> <th>Virus</th><th>Species</th><th>Diagnostic Test</th><th>Prevalence</th><th>Deaths</th><th>Morbidity</th><th>Reservoir</th>
     </tr>
 </thead>
 <tbody id="resultsTable">
@@ -121,7 +165,7 @@ Threshold: <input id="globalThreshold_slider" type="range" value="90" min=0 max=
 </table>
 </div>
 <div xstyle="float:right;">     
-  <input type="button" class="button" value="Finish &amp; Send Results" onclick="console.log('submitting ' + JSON.stringify(getRowIds())); SubmitResults(getResults(), getHTMLResults(), getRowIds(), makeURL());">
+  <input type="button" class="button" value="Finish &amp; Send Results" onclick="console.log('submitting ' + JSON.stringify(getRowIds())); SubmitResults(getAllResults(), getHTMLResults(), getRowIds(), makeURL());">
 </div>
 <center>
 </div>    
@@ -131,7 +175,7 @@ Threshold: <input id="globalThreshold_slider" type="range" value="90" min=0 max=
 <h2>Values not in Extracted Results</h2>
 <h3>Manually entered results</h2>
 <table id="resultsTable2">
-<tr><th></th><th>Country</th> <th>Year</th> <th>Virus</th> <th>Species</th> <th>Diagnostic Test</th>	</tr>
+<tr><th></th><th>Country</th> <th>Year</th> <th>Virus</th> <th>Species</th> <th>Diagnostic Test</th><th>Prevalence</th><th>Deaths</th><th>Morbidity</th><th>Reservoir</th></tr>
 
 <tr>
     <td></td>
@@ -142,10 +186,43 @@ Threshold: <input id="globalThreshold_slider" type="range" value="90" min=0 max=
 <td><input id="new_virus" type="text" value=""></input></td>
 <td><input id="new_species" type="text" value=""></input></td>    
 <td><input id="new_diagTest" type="text" value=""></input></td>
-<td><input type="button" class="button" value="Add to Table" onclick="addNewResult()"></td>
+<td><input id="new_Prevalence" type="text" value=""></input></td>
+<td><input id="new_Deaths" type="text" value=""></input></td>
+<td><input id="new_Morbidity" type="text" value=""></input></td>
+<td><select id="new_Reservoir">
+    		    <option name="" value="NA"></option>		    
+    		    <option name="Yes" value="Yes">Yes</option>
+    		    <option name="No" value="No">No</option>
+		    <option name="Maybe" value="Maybe">Maybe</option>
+      </select>
+   </td>
+   <td><input type="button" class="button" value="Add to Table" onclick="addNewResult()"></td>
+   <td><input type="button" class="button" value="Clear entries" onclick="clearNewEntries()"></td>   
 </tr>    
 </table>	
 
+
+<hr width="50%" class="divider" />
+
+<div id="FeedbackNotes2">
+<center><h2>Notes </h2></center>
+<div class="FeedbackNotes" id="EpiFeedback">
+<center><h3>About the Paper</h3>    </center>
+Additional notes about the paper for EpiCenter use
+<br/><a href="javascript:addFeedbackNote('EpiNotes')">Add note</a>
+<div id="EpiNotes"></div>	
+</div>
+
+    
+    <div id="DSIFeedback" class="FeedbackNotes">
+<center><h3>About the Algorithm &amp; UI</h3>    	</center>
+Please add notes for the DSI on the tool and the values proposed,
+    why they might have been included erroneously or the correct values missed,
+    or any feedback to improve the algorithm for identifying the correct terms (and the UI).
+<br/><a href="javascript:addFeedbackNote('DSINotes')">Add note</a>
+<div id="DSINotes">
+</div>	
+</div>
 
 </body>	
 </html>    

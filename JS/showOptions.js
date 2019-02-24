@@ -128,6 +128,14 @@ function clearSelections()
 {
     for(var i = 0; i < VarNames.length; i++) {
 	var p = document.getElementById(VarNames[i] + "_options");
-	unselectAllItems(p);
+	if(p == null) {
+	    // numerator/denominator
+	    var num = document.getElementById(VarNames[i] + "_numerator");
+	    var den = document.getElementById(VarNames[i] + "_denominator");
+	    num.value = "";
+	    den.value = "";
+	    
+	} else 
+   	   unselectAllItems(p);
     }
 }

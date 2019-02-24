@@ -23,3 +23,40 @@ function getResultsRow(row)
     }
     return(ans);
 }
+
+
+function getAllResults()
+{
+    var rows = getResults();
+
+//   rows['EpiNotes'] = getNotes('EpiNotes');
+//   rows['DSINotes'] = getNotes('DSINotes');    
+//   rows['basicReproductiveNumber'] = getBasicReproductiveNumber();
+//   rows['version'] = 2;
+//    return(rows);
+
+    var notes = {EpiNotes: getNotes('EpiNotes'), DSINotes: getNotes('DSINotes')};
+    var brn = getBasicReproductiveNumber();
+ console.log("In getAllResults()");
+    return( {rows: rows, notes: notes, basicReproductiveNumber: brn, version: 2} );
+}
+
+
+function getBasicReproductiveNumber()
+{
+    var t = document.getElementById('ReproductiveNumber');
+    return(t.value);
+}
+
+
+function restoreBasicReproductiveNumber(value)
+{
+    var t = document.getElementById('ReproductiveNumber');
+    t.value = value;
+}
+
+function restoreResults(results)
+{
+    restoreAllNotes(results['results']['notes']);
+    restoreBasicReproductiveNumber(results['results']['basicReproductiveNumber']);
+}

@@ -1,3 +1,5 @@
+var Testing = true;
+
 function makeURL()
 {
 //    var paperDir = basename(dirname(window.location.href));
@@ -34,11 +36,14 @@ function SubmitResults(data, html, rowIds, URL)
     }
 
     xhr.onreadystatechange = getSubmitResult;
-    xhr.send(JSON.stringify({
-	results: data,
-	html: html,
-	rowIds: rowIds
-    }));
+    var json = JSON.stringify({
+	                results: data,
+	                html: html,
+                        rowIds: rowIds});
+    if(Testing) {
+	console.log(json);
+    } else
+        xhr.send(json);
 }
 
 function checkResults(obj)
