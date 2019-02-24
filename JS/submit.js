@@ -40,6 +40,7 @@ function SubmitResults(data, html, rowIds, URL)
 	                results: data,
 	                html: html,
                         rowIds: rowIds,
+              	        sliderThresholds: CurrentThresholds,
               	        version: 2});
     if(Testing) {
 	console.log(json);

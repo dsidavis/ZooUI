@@ -2,12 +2,27 @@
 
 # New columns
 
-1. With new structure for results (including the notes and reproductive number presence)
-   we have to restore appropriately. See ui.html and references to the variable currentResults.
-   
-1. Collect the settings on the sliders ?
-   + And restore them.
+1. Collect the settings on the sliders - if manually changed?
+   + [done] Put into  the results as sliderThresholds, but only the elements that were changed.
+      + If not changed manually, then undefined in CurrentThresholds and JSON.stringify() drops
+        these.
+		
+   + And restore them.  Not done yet. When we do, use the names in sliderThresholds in results
+     and only identify those sliders.  Not all sliders will necessarily have an entry in this dictionary.
 
+1. Align the add and del links in each column given the extra columns.
+
+1. ?For manually entered results, add the numerator/denominator as separate fields or just leave as a
+   text field?
+
+1. [low] For numerator and denominator, if user enters / in the value, take this and separate
+   it and put into the numerator and denominator.
+   
+1. [low] Check numerator smaller than denominator.   
+
+1. [done] With new structure for results (including the notes and reproductive number presence)
+     we have to restore appropriately. See ui.html and references to the variable currentResults.
+   
 1. [done] Restore results correctly
    + restoreNotes()
    + restoreBasicReproductiveNumber()
@@ -22,18 +37,8 @@
    + [done] For  the primary table and 
    + [done] the Manually entered results.
 
-1. Align the add and del links in each column given the extra columns.
-
-1. ?For manually entered results, add the numerator/denominator as separate fields or just leave as a
-   text field?
-
 1. [done] When we add a row, do we reset the prevalence, deaths, morbidity, and reservoir?
     + [done] No - should use Clear Selections to clear these and add the new columns to the things to clear.
-
-1. [low] For numerator and denominator, if user enters / in the value, take this and separate
-   it and put into the numerator and denominator.
-   
-1. [low] Check numerator smaller than denominator.
 
 1. [done] add the per-paper notes and option (for Basic Reproductive Number).
    1. For  notes, allow for separate notes via a + "button"
