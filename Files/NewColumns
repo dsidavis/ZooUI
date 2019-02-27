@@ -1,0 +1,25 @@
+1. City (Per row)
+2a. Latitude 2b. Longitude (Per row)
+3. Specific test (Per row)
+4. Button to indicate that the paper was rejected: not used for data collection (Per paper)
+
+
+All added to first row of interface
+
+5. Prevalence numerator (Per row), 
+6. Prevalence denominator (Per row)
+7. Deaths numerator (Per row)
+8. Deaths denominator (Per row)
+9. Morbidity numerator (Per row)
+10. Morbidity denominator (Per row)
+11. Reservoir: dropdown Options: yes, no, unknown (Per row)
+
+
+Added.
+
+Per paper
+12. If the Basic Reproductive Number (R0) is reported in the paper (per paper)  dropdown: yes, no, yet to check (in case of data recorder is not sure) (Per paper)
+
+Two separate notes sections (Per paper)
+13. Notes for validation (notes that will help DSI validate and improve the model) 
+14. Notes for data (data specific notes for EpiCenter)
