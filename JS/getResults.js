@@ -38,7 +38,7 @@ function getAllResults()
     var notes = {EpiNotes: getNotes('EpiNotes'), DSINotes: getNotes('DSINotes')};
     var brn = getBasicReproductiveNumber();
  console.log("In getAllResults()");
-    return( {rows: rows, notes: notes, basicReproductiveNumber: brn, version: 2} );
+    return( {rows: rows, notes: notes, basicReproductiveNumber: brn, rejected: getRejected(), version: 2} );
 }
 
 
@@ -61,5 +61,20 @@ function restoreResults(results)
 	console.log('restoring from version 2');
 	restoreAllNotes(results['results']['notes']);
 	restoreBasicReproductiveNumber(results['results']['basicReproductiveNumber']);
+	restoreRejected(results['results']['rejected']);
     }
+}
+
+
+function getRejected()
+{
+    var t = document.getElementById('Rejected');
+    return(t.value);
+}
+
+function restoreRejected(val)
+{
+    var t = document.getElementById('Rejected');
+    t.value = val;
+    return(t.value);
 }
