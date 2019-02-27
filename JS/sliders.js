@@ -1,6 +1,6 @@
 var SliderVarNames = ['country', 'year', 'virus', 'species', 'diagTest'];
 
-var VarNames = SliderVarNames.concat( ['Prevalence', 'Deaths', 'Morbidity', 'Reservoir'] );
+var VarNames = SliderVarNames.concat( ['City', 'latitude', 'longitude', 'SpecificTest', 'Prevalence', 'Deaths', 'Morbidity', 'Reservoir'] );
 
 function updateGlobalThreshold(val, update)
 {

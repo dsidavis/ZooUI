@@ -10,7 +10,15 @@ function addResult()
     var idx = -1;
     for(i = 0; i < VarNames.length; i++) {
 	var v = VarNames[i];
-	var sel = document.getElementById(v + "_options");
+	var sel;
+
+	sel = document.getElementById(v);
+	if(sel != null) {
+	    sels[v] = [sel.value];
+	    console.log("variable " + v + " " + sels[v]);	    
+	    continue;	    
+	} else 
+   	    sel = document.getElementById(v + "_options");
 
 	if(sel == null) {
 

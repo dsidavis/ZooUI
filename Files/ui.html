@@ -52,11 +52,20 @@
 <div style="clear: both;"></div>
 
 
-Basic Reproductive Number (R<sub>0</sub>) reported?
+<b>Basic Reproductive Number (R<sub>0</sub>) reported?</b>
 <select id="ReproductiveNumber">
 <option value=""></option>    	    
 <option value="NO">No</option>    	
 <option value="YES">Yes</option>    	
+</select>
+
+<p>
+
+<b>Paper rejected ?</b>
+<select id="Rejected">
+    <option value=""></option>
+    <option value="NO">No</option>
+    <option value="YES">Yes</option>    
 </select>    
 
 <hr width="50%" class="divider"/>
@@ -72,6 +81,9 @@ Threshold: <input id="globalThreshold_slider" type="range" value="90" min=0 max=
 <tr valign="top"><th>	    
     <table border=1 align="center">
 	<tr><th id="Country_th">Country</th> <th id="Year_th">Year</th> <th id="Virus_th">Virus</th> <th id="Species_th">Species</th> <th id="DiagnosticTest_th">Diagnostic Test</th>
+	    <th>City</th>
+	    <th>Geolocation</th>
+	    <th>Specific Test</th>	    
 	    <th>Prevalence</th>
 	    <th>Deaths</th>
 	    <th>Morbidity</th>
@@ -91,6 +103,18 @@ Threshold: <input id="globalThreshold_slider" type="range" value="90" min=0 max=
 	    <td><div class=""><select size=10 id="species_options" multiple=1></select></div></td>
 	    <td><div class=""><select size=10 id="diagTest_options" multiple=1></select></div></td>	    
 
+	    <th>
+		<input id="City" type="text"></input>
+	    </th>
+	    <th>
+		<table>
+                  <tr><th>Lat<th><th><input  id="latitude" type="text"></input><th></tr>
+		  <tr><th>Long<th><th><input id="longitude"  type="text"></input><th></tr>			
+		</table>
+ 	    </th>
+	    <th>
+		<input type="text" id="SpecificTest"></input>
+    	   </th>
 	    <th>
 		<table>
                   <tr><th>Numerator<th><th><input class="numerator" id="Prevalence_numerator" type="text"></input><th></tr>
@@ -157,7 +181,9 @@ Threshold: <input id="globalThreshold_slider" type="range" value="90" min=0 max=
 <div id="ResultTableContainer">
 <table>
 <thead>	
-    <tr><th>Country</th> <th>Year</th> <th>Virus</th><th>Species</th><th>Diagnostic Test</th><th>Prevalence</th><th>Deaths</th><th>Morbidity</th><th>Reservoir</th>
+    <tr><th>Country</th> <th>Year</th> <th>Virus</th><th>Species</th><th>Diagnostic Test</th>
+	<th>City</th><th>Latitude</th><th>Longitude</th><th>Specific Test</th>
+	<th>Prevalence</th><th>Deaths</th><th>Morbidity</th><th>Reservoir</th>
     </tr>
 </thead>
 <tbody id="resultsTable">
@@ -175,7 +201,9 @@ Threshold: <input id="globalThreshold_slider" type="range" value="90" min=0 max=
 <h2>Values not in Extracted Results</h2>
 <h3>Manually entered results</h2>
 <table id="resultsTable2">
-<tr><th></th><th>Country</th> <th>Year</th> <th>Virus</th> <th>Species</th> <th>Diagnostic Test</th><th>Prevalence</th><th>Deaths</th><th>Morbidity</th><th>Reservoir</th></tr>
+    <tr><th></th><th>Country</th> <th>Year</th> <th>Virus</th> <th>Species</th> <th>Diagnostic Test</th>
+	<th>City</th><th>Latitude</th><th>Longitude</th><th>Specific Test</th>
+	<th>Prevalence</th><th>Deaths</th><th>Morbidity</th><th>Reservoir</th></tr>
 
 <tr>
     <td></td>
@@ -186,6 +214,10 @@ Threshold: <input id="globalThreshold_slider" type="range" value="90" min=0 max=
 <td><input id="new_virus" type="text" value=""></input></td>
 <td><input id="new_species" type="text" value=""></input></td>    
 <td><input id="new_diagTest" type="text" value=""></input></td>
+<td><input id="new_City" type="text" value=""></input></td>
+<td><input id="new_latitude" type="text" value=""></input></td>
+<td><input id="new_longitude" type="text" value=""></input></td>
+<td><input id="new_SpecificTest" type="text" value=""></input></td>
 <td><input id="new_Prevalence" type="text" value=""></input></td>
 <td><input id="new_Deaths" type="text" value=""></input></td>
 <td><input id="new_Morbidity" type="text" value=""></input></td>
