@@ -1,3 +1,5 @@
+var NeedToSubmit = false;
+
 
 function addResult()
 {
@@ -146,6 +148,27 @@ function insertResult(vals, n, manual, primaryIndex = 0)
 	    window.status = "This row is already in the table";
 	}
     }
+
+    setNeedToSubmit(true);
+}
+
+
+function setNeedToSubmit(val)
+{
+    NeedToSubmit = val;
+
+    var btn = document.getElementById('Submit');
+    btn.style.backgroundColor = val ? 'red' : grey;
+}
+
+
+function checkSubmit()
+{
+   console.log("In checkSubmit " + NeedToSubmit);
+   if(NeedToSubmit) {
+      return("Changes not submitted.  Click on Finish & Submit Results or Okay to discard and leave this page.");
+   } else
+    return("");
 }
 
 function rowExists(id, ids)

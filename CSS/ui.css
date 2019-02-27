@@ -63,3 +63,12 @@ textarea.Note {
     width: 100%;
     height: 80px;
 }
+
+
+input.finish {
+   font-size: 30;
+}
+
+input.addRow {
+   font-size: 20;
+}

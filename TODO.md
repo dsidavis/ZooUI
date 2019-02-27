@@ -1,5 +1,12 @@
 # TODO Zoonotics UI
 
+
+#
+1. When add/delete a row to the table or change reproductive or rejected, then 
+  change color 
+  
+1. When they leave a page and there are changes that haven't been submitted, bring up a dialog.
+
 # New columns
 
 1. Collect the settings on the sliders - if manually changed?
