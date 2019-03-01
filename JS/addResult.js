@@ -15,12 +15,14 @@ function addResult()
 	var sel;
 
 	sel = document.getElementById(v);
-	if(sel != null) {
+	var sel2 = document.getElementById(v + "_options");
+
+	if(sel2 == null && sel != null) {
 	    sels[v] = [sel.value];
 	    console.log("variable " + v + " " + sels[v]);	    
 	    continue;	    
 	} else 
-   	    sel = document.getElementById(v + "_options");
+   	    sel = sel2; // document.getElementById(v + "_options");
 
 	if(sel == null) {
 
@@ -158,7 +160,7 @@ function setNeedToSubmit(val)
     NeedToSubmit = val;
 
     var btn = document.getElementById('Submit');
-    btn.style.backgroundColor = val ? 'red' : grey;
+    btn.style.backgroundColor = val ? 'red' : 'grey';
 }
 
 

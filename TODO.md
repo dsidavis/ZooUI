@@ -2,10 +2,10 @@
 
 
 #
-1. When add/delete a row to the table or change reproductive or rejected, then 
+1. [done] When add/delete a row to the table or change reproductive or rejected, then 
   change color 
   
-1. When they leave a page and there are changes that haven't been submitted, bring up a dialog.
+1. [done] When they leave a page and there are changes that haven't been submitted, bring up a dialog.
 
 # New columns
 
