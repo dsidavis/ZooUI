@@ -1,0 +1,5 @@
+readDataJS = function(doc)
+{
+    i = grep("^var ModelResults", doc)
+    fromJSON(paste(gsub("^var .* = |;$", "", doc[i:length(doc)]), collapse = " "))
+}

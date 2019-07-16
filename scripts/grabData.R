@@ -9,6 +9,10 @@ docs = lapply(d, readLines)
 
 zooData = lapply(docs, readDataJS)
 
-names(zooData) = dirname(d)
+zooMeta = lapply(docs, readMetaJS)
+
+
+names(zooData) = names(zooMeta) = dirname(d)
 
 saveRDS(zooData, file = "zooData.rds")
+saveRDS(zooMeta, file = "zooMeta.rds")
