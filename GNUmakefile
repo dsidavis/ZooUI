@@ -14,7 +14,7 @@ ship.tar.gz: $(FILES)
 ZooUI_files.tar.gz:
 	ssh dsi 'tar zcf ZooUI_files.tar.gz -C /data_small/Zoonotics ZooUI_files'
 	scp dsi:ZooUI_files.tar.gz .
-	
+
 sendShip: ship.tar.gz
 	rsync $^ dsilib:
 
@@ -26,4 +26,13 @@ send: ZooUI_files.tar.gz ship.tar.gz
 Install: sendShip
 	scp install dsilib:
 	ssh dsilib 'sh -x -e ./install'
+
+# Rules for collecting and exporting the results
+# 
+
+results/SpilloverResults.rds: scripts/collect.R R/collect_funs.R
+	Rscript $<
+
+results/zooMeta.rds results/zooData.rds: scripts/grabData.R
+	Rscript $<
 

@@ -1,5 +1,5 @@
-d = readRDS("SpillOverResults.rds") # from collect.R
-f = readRDS("zooMeta.rds") # from grabData.R
+d = readRDS("results/SpillOverResults.rds") # from collect.R
+f = readRDS("results/zooMeta.rds") # from grabData.R
 
 ################################################################################
 
@@ -34,7 +34,7 @@ results = do.call(rbind, results)
 
 results = data.frame(lapply(results, function(x) gsub("\n", "", as.character(x))))
 
-
+saveRDS(results, "results/SpilloverResults_w_meta.rds")
 write.csv(results,
           file = paste0("SpillOverResults_",
                         as.Date(Sys.time()),

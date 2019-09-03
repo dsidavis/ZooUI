@@ -17,5 +17,5 @@ table(err)
 names(results) = dirname(up)
 results = results[!err]
 
-saveRDS(results, "SpillOverResults.rds")
+saveRDS(results, "results/SpillOverResults.rds")
 
