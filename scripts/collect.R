@@ -17,5 +17,8 @@ table(err)
 names(results) = dirname(up)
 results = results[!err]
 
+if(!dir.exists("results"))
+    dir.create("results")
+
 saveRDS(results, "results/SpillOverResults.rds")
 
